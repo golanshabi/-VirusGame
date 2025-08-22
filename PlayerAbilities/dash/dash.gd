@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var timer = $"DashTimer"
 @onready var cooldown_timer = $"CooldownTimer"
-var ghost_scene = preload("res://PlayerAbilities/ghost.tscn")
+var ghost_scene = preload("res://PlayerAbilities/dash/ghost.tscn")
 @onready var Sprite
 var player_sprite
 
@@ -20,9 +20,6 @@ func instance_ghost():
 	get_tree().get_root().add_child(Sprite)	
 	
 	Sprite.global_position = player_sprite.global_position
-	#Sprite.texture = player_sprite.texture
-	#Sprite.vframes = player_sprite.vframes
-	#Sprite.hframse = player_sprite.hframes
 	Sprite.frame = player_sprite.frame
 	Sprite.flip_h = player_sprite.flip_h
 

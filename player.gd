@@ -6,13 +6,17 @@ const DASH_SPEED = 275
 const JUMP_SINGLE_VELOCITY = -275.0
 const GRAVITY_REDUCTION_RATIO = 0.70
 const DASH_COOLDOWN_SEC = 2.5
+
+const CLONE_DURATION = 3
+const CLONE_COOLDOWN = 3
 # State variables
 var dash_duration = 0.2
 
 @onready var dash = $Dash
+@onready var cloner = $cloner
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("dash") and dash.is_dash_allowed():
+	if Input.is_action_just_pressed("dash") and dash.is_dash_allowed() and Input.get_axis("ui_left", "ui_right"):
 		dash.startDashing(dash_duration, DASH_COOLDOWN_SEC, $AnimatedSprite2D)
 	# Add the gravity.
 	if not is_on_floor():
@@ -25,10 +29,14 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_SINGLE_VELOCITY
+	
+	if Input.is_action_pressed("clone_aim") and cloner.is_clone_allowed():
+		var vec : Vector2 = get_global_mouse_position()
+		cloner.do_clone(CLONE_COOLDOWN, vec)
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
 	var speed = SPEED
 	var animation = "move"
 	if dash.is_dashing():

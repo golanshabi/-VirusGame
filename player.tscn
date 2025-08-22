@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwqqfutaiwk2y"]
+[gd_scene load_steps=13 format=3 uid="uid://dwqqfutaiwk2y"]
 
 [ext_resource type="Script" uid="uid://sab3jvp0s260" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://xcayowgjwq5v" path="res://brackeys_platformer_assets/sprites/PlayerSprites/main_idle_2.png" id="2_hqtel"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cmflg6x250llk" path="res://brackeys_platformer_assets/sprites/PlayerSprites/main_idle_3.webp" id="4_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://d1oqh0k1uhh0l" path="res://brackeys_platformer_assets/sprites/PlayerSprites/move_1.webp" id="5_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://ccpnud7fnyd3x" path="res://brackeys_platformer_assets/sprites/PlayerSprites/dash1.webp" id="5_2hs0m"]
-[ext_resource type="PackedScene" uid="uid://bp8r0t7b02xg0" path="res://PlayerAbilities/dash.tscn" id="5_sweqy"]
+[ext_resource type="PackedScene" uid="uid://bp8r0t7b02xg0" path="res://PlayerAbilities/dash/dash.tscn" id="5_sweqy"]
 [ext_resource type="Texture2D" uid="uid://oecm2h82gh1m" path="res://brackeys_platformer_assets/sprites/PlayerSprites/move_2.webp" id="6_dw050"]
+[ext_resource type="PackedScene" uid="uid://bxktvj86vfu1r" path="res://PlayerAbilities/clone/cloner.tscn" id="9_b26j0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
 radius = 11.0
@@ -72,3 +73,5 @@ animation = &"dash"
 autoplay = "idle"
 
 [node name="Dash" parent="." instance=ExtResource("5_sweqy")]
+
+[node name="cloner" parent="." instance=ExtResource("9_b26j0")]

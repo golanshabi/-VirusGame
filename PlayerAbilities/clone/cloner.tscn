@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxktvj86vfu1r"]
+
+[ext_resource type="Script" uid="uid://7l7n66ivmy1g" path="res://PlayerAbilities/clone/cloner.gd" id="1_5yfi1"]
+
+[node name="cloner" type="Node"]
+script = ExtResource("1_5yfi1")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
