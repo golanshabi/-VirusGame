@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwqqfutaiwk2y"]
+[gd_scene load_steps=12 format=3 uid="uid://dwqqfutaiwk2y"]
 
 [ext_resource type="Script" uid="uid://sab3jvp0s260" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://xcayowgjwq5v" path="res://brackeys_platformer_assets/sprites/main_idle_2.png" id="2_hqtel"]
-[ext_resource type="Texture2D" uid="uid://dumdvvg5umlk7" path="res://brackeys_platformer_assets/sprites/main_idle.webp" id="3_sweqy"]
-[ext_resource type="Texture2D" uid="uid://cmflg6x250llk" path="res://brackeys_platformer_assets/sprites/main_idle_3.webp" id="4_2hs0m"]
-[ext_resource type="Texture2D" uid="uid://ccpnud7fnyd3x" path="res://brackeys_platformer_assets/sprites/move_1_v2.webp" id="5_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://xcayowgjwq5v" path="res://brackeys_platformer_assets/sprites/PlayerSprites/main_idle_2.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://dumdvvg5umlk7" path="res://brackeys_platformer_assets/sprites/PlayerSprites/main_idle.webp" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://cmflg6x250llk" path="res://brackeys_platformer_assets/sprites/PlayerSprites/main_idle_3.webp" id="4_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://d1oqh0k1uhh0l" path="res://brackeys_platformer_assets/sprites/PlayerSprites/move_1.webp" id="5_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://ccpnud7fnyd3x" path="res://brackeys_platformer_assets/sprites/PlayerSprites/dash1.webp" id="5_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://bp8r0t7b02xg0" path="res://PlayerAbilities/dash.tscn" id="5_sweqy"]
+[ext_resource type="Texture2D" uid="uid://oecm2h82gh1m" path="res://brackeys_platformer_assets/sprites/PlayerSprites/move_2.webp" id="6_dw050"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
 radius = 11.0
@@ -15,6 +17,14 @@ radius = 12.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2hs0m")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_hqtel")
@@ -34,10 +44,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_2hs0m")
+"texture": ExtResource("5_1jxqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dw050")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"move",
 "speed": 5.0
 }]
 
@@ -55,7 +68,7 @@ shape = SubResource("CircleShape2D_onrkg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_1jxqw")
-animation = &"new_animation"
+animation = &"dash"
 autoplay = "idle"
 
 [node name="Dash" parent="." instance=ExtResource("5_sweqy")]

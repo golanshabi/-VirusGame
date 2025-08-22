@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xcayowgjwq5v"
-path="res://.godot/imported/main_idle_2.png-e75b43fabac9ea056b135ebe348d6af6.ctex"
+uid="uid://cmflg6x250llk"
+path="res://.godot/imported/main_idle_3.webp-f6805acbecb0cce26df9d910d847a791.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://brackeys_platformer_assets/sprites/main_idle_2.png"
-dest_files=["res://.godot/imported/main_idle_2.png-e75b43fabac9ea056b135ebe348d6af6.ctex"]
+source_file="res://brackeys_platformer_assets/sprites/PlayerSprites/main_idle_3.webp"
+dest_files=["res://.godot/imported/main_idle_3.webp-f6805acbecb0cce26df9d910d847a791.ctex"]
 
 [params]
 

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjgx06my0hnc7"]
+
+[ext_resource type="Script" uid="uid://bpqy4qwviglk5" path="res://ghost.gd" id="1_x7ft5"]
+[ext_resource type="Texture2D" uid="uid://d3opkmhx3ypvs" path="res://brackeys_platformer_assets/sprites/PlayerSprites/dash_effect_2.webp" id="2_sqi31"]
+
+[node name="Ghost" type="Sprite2D"]
+texture = ExtResource("2_sqi31")
+script = ExtResource("1_x7ft5")
+
+[node name="DashEffect2" type="Sprite2D" parent="."]
+modulate = Color(0.779291, 0.779291, 0.779291, 1)
+show_behind_parent = true
+texture = ExtResource("2_sqi31")
