@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwqqfutaiwk2y"]
+[gd_scene load_steps=10 format=3 uid="uid://dwqqfutaiwk2y"]
 
 [ext_resource type="Script" uid="uid://sab3jvp0s260" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://xcayowgjwq5v" path="res://brackeys_platformer_assets/sprites/main_idle_2.png" id="2_hqtel"]
 [ext_resource type="Texture2D" uid="uid://dumdvvg5umlk7" path="res://brackeys_platformer_assets/sprites/main_idle.webp" id="3_sweqy"]
 [ext_resource type="Texture2D" uid="uid://cmflg6x250llk" path="res://brackeys_platformer_assets/sprites/main_idle_3.webp" id="4_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://ccpnud7fnyd3x" path="res://brackeys_platformer_assets/sprites/move_1_v2.webp" id="5_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://bp8r0t7b02xg0" path="res://PlayerAbilities/dash.tscn" id="5_sweqy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
 radius = 11.0
@@ -29,6 +31,14 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2hs0m")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -45,6 +55,7 @@ shape = SubResource("CircleShape2D_onrkg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_1jxqw")
-animation = &"idle"
+animation = &"new_animation"
 autoplay = "idle"
-frame_progress = 0.774071
+
+[node name="Dash" parent="." instance=ExtResource("5_sweqy")]
