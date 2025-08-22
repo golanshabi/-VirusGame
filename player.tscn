@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwqqfutaiwk2y"]
+
+[ext_resource type="Script" uid="uid://sab3jvp0s260" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://xcayowgjwq5v" path="res://brackeys_platformer_assets/sprites/main_idle_2.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://dumdvvg5umlk7" path="res://brackeys_platformer_assets/sprites/main_idle.webp" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://cmflg6x250llk" path="res://brackeys_platformer_assets/sprites/main_idle_3.webp" id="4_2hs0m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 12.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hqtel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sweqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hqtel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2hs0m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -14)
+shape = SubResource("CircleShape2D_hqtel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -10)
+shape = SubResource("CircleShape2D_onrkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_1jxqw")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.774071
