@@ -4,13 +4,14 @@ extends CharacterBody2D
 const SPEED = 130.0
 const JUMP_SINGLE_VELOCITY = -250.0
 const GRAVITY_REDUCTION_RATIO = 0.70
+const FLOATINESS = 0.95
 # State variables
 var jump_count = 0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		var gravity = get_gravity() * delta
+		var gravity = get_gravity() * delta * FLOATINESS
 		if velocity.y < 0 and Input.is_action_pressed("ui_accept"):
 			gravity = gravity * GRAVITY_REDUCTION_RATIO
 		velocity += gravity
