@@ -1,11 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn5qnqdvtcyfg"]
+[gd_scene load_steps=7 format=3 uid="uid://bn5qnqdvtcyfg"]
 
-[ext_resource type="Texture2D" uid="uid://b3plesdvsyhex" path="res://icon.svg" id="1_wmkvi"]
 [ext_resource type="Script" uid="uid://vv32fg4ed6f3" path="res://PlayerAbilities/clone/clone.gd" id="1_wuudt"]
-[ext_resource type="PackedScene" uid="uid://dwqqfutaiwk2y" path="res://player.tscn" id="3_nxbel"]
+[ext_resource type="Texture2D" uid="uid://bra7ebt07f5gp" path="res://Assetes/copy_idle_1.png" id="2_ld62u"]
+[ext_resource type="Texture2D" uid="uid://cme61q6jdhq1h" path="res://Assetes/copy_idle_2.png" id="3_l5sk7"]
+[ext_resource type="Texture2D" uid="uid://b38mvnep71vtp" path="res://Assetes/copy_idle_3.png" id="4_tmjwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wuudt"]
-size = Vector2(1300, 1300)
+size = Vector2(1500, 1400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3kim"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ld62u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l5sk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tmjwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l5sk7")
+}],
+"loop": true,
+"name": &"Idle_clone",
+"speed": 5.0
+}]
 
 [node name="clone" type="StaticBody2D"]
 scale = Vector2(0.2, 0.2)
@@ -16,9 +37,9 @@ position = Vector2(-7.15256e-06, 1.19209e-05)
 scale = Vector2(0.0999999, 0.0999999)
 shape = SubResource("RectangleShape2D_wuudt")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(9.53674e-07, 2.84217e-14)
-texture = ExtResource("1_wmkvi")
-
-[node name="Player" parent="." instance=ExtResource("3_nxbel")]
-position = Vector2(100, 15)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 4.58333)
+sprite_frames = SubResource("SpriteFrames_v3kim")
+animation = &"Idle_clone"
+autoplay = "Idle_clone"
+frame_progress = 0.130357
