@@ -15,7 +15,12 @@ func _ready():
 func hit_enemy():
 	if !dead:
 		hp -= 10
-	
+		var tween_fade = get_tree().create_tween()
+		var white_value = 200
+		tween_fade.tween_property(self, "modulate", Color(white_value, white_value, white_value, 1.0), 0.05)
+		await tween_fade.finished
+		tween_fade = get_tree().create_tween()
+		tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.05)
 	if hp <= 0:
 		dead = true
 		#play death animation

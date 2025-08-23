@@ -63,7 +63,7 @@ func _physics_process(delta: float) -> void:
 	var vec : Vector2 = global_position + Vector2.DOWN * CLONE_RADIUS
 	$clone_aim.global_position = vec
 	
-	if Input.is_action_pressed("clone_aim") and cloner.is_clone_allowed() and !is_in_knockback:
+	if Input.is_action_pressed("clone_aim") and cloner.is_clone_allowed() and !is_in_knockback and !is_on_floor():
 		cloner.do_clone(CLONE_COOLDOWN, vec)
 
 	# Get the input direction and handle the movement/deceleration.
@@ -117,7 +117,6 @@ func hit_player(damage : int):
 		await tween_fade.finished
 		tween_fade = get_tree().create_tween()
 		tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.05)
-		await tween_fade.finished
 func trans_state():
 	if jump_state == JumpState.TRANS_FLOOR || jump_state == JumpState.TRANS_JUMP:
 		jump_state += 1
