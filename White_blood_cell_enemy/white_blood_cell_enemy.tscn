@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://1ddikfilqihe" path="res://Assetes/explode_10.png" id="12_41va1"]
 [ext_resource type="AudioStream" uid="uid://bja4i6vq5huox" path="res://Assetes/Music/police_chase.wav" id="14_7xds7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1hlju"]
-radius = 160.854
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xds7"]
+size = Vector2(254, 208)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lk5io"]
 animations = [{
@@ -92,10 +92,10 @@ height = 41.9892
 script = ExtResource("1_1hlju")
 
 [node name="Player_Search_Zone" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Search_Zone"]
-shape = SubResource("CircleShape2D_1hlju")
+position = Vector2(-1, -76)
+shape = SubResource("RectangleShape2D_7xds7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -1)

@@ -10,6 +10,8 @@ var max_time_limit = 10000000
 
 @export var flip_h : bool = false
 @export var chase_speed : int = 100
+@export var chase_radius_scale : int = 1
+
 
 var damage = 15
 var player
@@ -23,6 +25,7 @@ func _ready():
 		direction = -1
 	start_seed = randf()
 	time = start_seed * 1000
+	$Player_Search_Zone.scale.x = chase_radius_scale
 
 func hit_enemy():
 	if !dead:
