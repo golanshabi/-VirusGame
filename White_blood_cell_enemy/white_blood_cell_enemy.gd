@@ -31,6 +31,7 @@ var direction = 1
 
 func _ready():
 	start_position = global_position
+	$AudioStreamPlayer2D.max_distance = 200 * (scale.x - 1)
 	$AnimatedSprite2D.modulate = color
 	if flip_h:
 		$AnimatedSprite2D.flip_h = true

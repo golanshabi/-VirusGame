@@ -164,7 +164,7 @@ position = Vector2(0, -40)
 scale = Vector2(0.28125, 0.28125)
 sprite_frames = SubResource("SpriteFrames_qqde3")
 autoplay = "default"
-frame_progress = 0.936248
+frame_progress = 0.181903
 
 [node name="exclemation_sign" type="Sprite2D" parent="Siren"]
 modulate = Color(1, 1, 1, 0.545098)

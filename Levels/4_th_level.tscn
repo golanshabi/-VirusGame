@@ -302,12 +302,25 @@ position = Vector2(2984, 223)
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Pill_enemy2" parent="Enemies" instance=ExtResource("16_xxi3m")]
-position = Vector2(1165, 15)
+position = Vector2(1143, 208)
+ROLL_COOLDOWN = 3
+flip_h = true
+
+[node name="Pill_enemy4" parent="Enemies" instance=ExtResource("16_xxi3m")]
+position = Vector2(1973, 207)
 ROLL_COOLDOWN = 3
 flip_h = true
 
 [node name="Pill_enemy3" parent="Enemies" instance=ExtResource("16_xxi3m")]
-position = Vector2(883, 15)
+position = Vector2(864, 80)
+ROLL_COOLDOWN = 3
+
+[node name="Pill_enemy6" parent="Enemies" instance=ExtResource("16_xxi3m")]
+position = Vector2(381, 202)
+ROLL_COOLDOWN = 3
+
+[node name="Pill_enemy5" parent="Enemies" instance=ExtResource("16_xxi3m")]
+position = Vector2(-67, 202)
 ROLL_COOLDOWN = 3
 
 [node name="White_blood_cell_enemy" parent="Enemies" instance=ExtResource("17_f6q4e")]
