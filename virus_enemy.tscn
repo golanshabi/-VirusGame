@@ -49,7 +49,7 @@ radius = 9.9999
 height = 27.9997
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r43d"]
-size = Vector2(16, 2)
+size = Vector2(16, 4)
 
 [node name="Virus_enemy" type="CharacterBody2D"]
 script = ExtResource("1_7r43d")
@@ -66,7 +66,7 @@ shape = SubResource("CapsuleShape2D_sliqx")
 script = ExtResource("2_sliqx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_box"]
-position = Vector2(0, 1)
+position = Vector2(0, 2)
 rotation = -1.57526
 shape = SubResource("CapsuleShape2D_7r43d")
 
@@ -74,7 +74,7 @@ shape = SubResource("CapsuleShape2D_7r43d")
 script = ExtResource("3_qcgxb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_area"]
-position = Vector2(0, -12)
+position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_7r43d")
 
 [connection signal="body_entered" from="Hit_box" to="Hit_box" method="_on_body_entered"]
