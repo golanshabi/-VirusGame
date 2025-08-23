@@ -1,21 +1,33 @@
 [gd_scene load_steps=13 format=3 uid="uid://dwqqfutaiwk2y"]
 
 [ext_resource type="Script" uid="uid://sab3jvp0s260" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://xcayowgjwq5v" path="res://brackeys_platformer_assets/sprites/PlayerSprites/main_idle_2.png" id="2_hqtel"]
-[ext_resource type="Texture2D" uid="uid://dumdvvg5umlk7" path="res://brackeys_platformer_assets/sprites/PlayerSprites/main_idle.webp" id="3_sweqy"]
-[ext_resource type="Texture2D" uid="uid://cmflg6x250llk" path="res://brackeys_platformer_assets/sprites/PlayerSprites/main_idle_3.webp" id="4_2hs0m"]
-[ext_resource type="Texture2D" uid="uid://d1oqh0k1uhh0l" path="res://brackeys_platformer_assets/sprites/PlayerSprites/move_1.webp" id="5_1jxqw"]
-[ext_resource type="Texture2D" uid="uid://ccpnud7fnyd3x" path="res://brackeys_platformer_assets/sprites/PlayerSprites/dash1.webp" id="5_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://bp8r0t7b02xg0" path="res://PlayerAbilities/dash/dash.tscn" id="5_sweqy"]
-[ext_resource type="Texture2D" uid="uid://oecm2h82gh1m" path="res://brackeys_platformer_assets/sprites/PlayerSprites/move_2.webp" id="6_dw050"]
 [ext_resource type="PackedScene" uid="uid://bxktvj86vfu1r" path="res://PlayerAbilities/clone/cloner.tscn" id="9_b26j0"]
 [ext_resource type="Texture2D" uid="uid://bra7ebt07f5gp" path="res://Assetes/copy_idle_1.png" id="10_n7ghd"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqtel"]
+load_path = "res://.godot/imported/dash1.webp-27e29935b2a957ba7cc7222b0d86ad72.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sweqy"]
+load_path = "res://.godot/imported/main_idle_2.png-304cde4bf416b0ea3b14ec7dee70e6d4.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2hs0m"]
+load_path = "res://.godot/imported/main_idle.webp-60ea3a1f53a01d5d7d651b2426ca8d48.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1jxqw"]
+load_path = "res://.godot/imported/main_idle_3.webp-f6805acbecb0cce26df9d910d847a791.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dw050"]
+load_path = "res://.godot/imported/move_1.webp-7a320dfa5fbc691c9380843338b99b0c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b26j0"]
+load_path = "res://.godot/imported/move_2.webp-c591241d1be0b6db97c55b00dfe7fc1f.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_2hs0m")
+"texture": SubResource("CompressedTexture2D_hqtel")
 }],
 "loop": true,
 "name": &"dash",
@@ -23,16 +35,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_hqtel")
+"texture": SubResource("CompressedTexture2D_sweqy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_sweqy")
+"texture": SubResource("CompressedTexture2D_2hs0m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_hqtel")
+"texture": SubResource("CompressedTexture2D_sweqy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_2hs0m")
+"texture": SubResource("CompressedTexture2D_1jxqw")
 }],
 "loop": true,
 "name": &"idle",
@@ -40,10 +52,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_1jxqw")
+"texture": SubResource("CompressedTexture2D_dw050")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_dw050")
+"texture": SubResource("CompressedTexture2D_b26j0")
 }],
 "loop": true,
 "name": &"move",

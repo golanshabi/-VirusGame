@@ -16,8 +16,8 @@ const CLONE_RADIUS = 30
 var dash_duration = 0.2
 var hp = 100
 
-var knockback_force : int = 0
-var max_knockback_force : int = 400
+var knockback_force : float = 0.0
+var max_knockback_force : float = 400
 var knockback_divider = 10
 var is_in_knockback : bool = false
 var dead : bool = false
