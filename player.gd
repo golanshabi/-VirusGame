@@ -161,8 +161,10 @@ func trans_state():
 	if jump_state == JumpState.TRANS_FLOOR || jump_state == JumpState.TRANS_JUMP:
 		jump_state += 1
 
-func increase_score(added_score):
+func increase_score(added_score, sound):
 	Globals.player_score += added_score
+	audio_player.stream = sound
+	audio_player.play()
 	print(Globals.player_score)
 
 func get_score():
