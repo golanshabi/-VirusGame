@@ -1,9 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwqqfutaiwk2y"]
+[gd_scene load_steps=20 format=3 uid="uid://dwqqfutaiwk2y"]
 
 [ext_resource type="Script" uid="uid://sab3jvp0s260" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dwi3ibjcrf76c" path="res://Assetes/dead 1.png" id="2_b26j0"]
+[ext_resource type="Texture2D" uid="uid://wpsqc6ts8rc2" path="res://Assetes/dead 2.png" id="3_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://bjmhdvs14xhnm" path="res://Assetes/dead 3.png" id="4_nvl01"]
+[ext_resource type="Texture2D" uid="uid://2ytejm0ogp6" path="res://Assetes/dead 4.png" id="5_ivps1"]
 [ext_resource type="PackedScene" uid="uid://bp8r0t7b02xg0" path="res://PlayerAbilities/dash/dash.tscn" id="5_sweqy"]
+[ext_resource type="Texture2D" uid="uid://bjpfnsyt6vt5t" path="res://Assetes/dead 5.png" id="6_urp6f"]
 [ext_resource type="PackedScene" uid="uid://bxktvj86vfu1r" path="res://PlayerAbilities/clone/cloner.tscn" id="9_b26j0"]
 [ext_resource type="Texture2D" uid="uid://bra7ebt07f5gp" path="res://Assetes/copy_idle_1.png" id="10_n7ghd"]
+[ext_resource type="PackedScene" uid="uid://cesr32p3lk6st" path="res://PlayerAbilities/hit_effect.tscn" id="10_nvl01"]
+[ext_resource type="PackedScene" uid="uid://cdg41e02o8hhr" path="res://PlayerAbilities/dash_effect.tscn" id="11_nvl01"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqtel"]
 load_path = "res://.godot/imported/dash1.webp-27e29935b2a957ba7cc7222b0d86ad72.ctex"
@@ -31,6 +38,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b26j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n7ghd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nvl01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ivps1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_urp6f")
+}],
+"loop": false,
+"name": &"death",
 "speed": 5.0
 }, {
 "frames": [{
@@ -71,8 +98,10 @@ script = ExtResource("1_onrkg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_1jxqw")
-animation = &"dash"
+animation = &"death"
 autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -87,3 +116,9 @@ visible = false
 modulate = Color(1, 1, 1, 0.301961)
 position = Vector2(62, 13)
 texture = ExtResource("10_n7ghd")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Hit_effect" parent="." instance=ExtResource("10_nvl01")]
+
+[node name="Dash_effect" parent="." instance=ExtResource("11_nvl01")]

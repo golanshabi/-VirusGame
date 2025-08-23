@@ -15,7 +15,7 @@ func startDashing(duration, cooldown, sprite, is_fly):
 	player_sprite = sprite
 	is_flying = is_fly
 	
-	instance_ghost()
+	#instance_ghost()
 	
 func instance_ghost():
 	Sprite = ghost_scene.instantiate()

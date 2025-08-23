@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw8sqymnjj1mt"]
+
+[ext_resource type="Texture2D" uid="uid://dwi3ibjcrf76c" path="res://Assetes/dead 1.png" id="1_g1wvn"]
+[ext_resource type="Texture2D" uid="uid://wpsqc6ts8rc2" path="res://Assetes/dead 2.png" id="2_u4r1m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vby1k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g1wvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u4r1m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4r1m"]
+size = Vector2(8, 119)
+
+[sub_resource type="Curve" id="Curve_vby1k"]
+_data = [Vector2(0.015, 0.550562), 0.0, 0.0, 0, 0, Vector2(0.29, 0.932584), 0.0, 0.0, 0, 0, Vector2(0.73, 0.674157), 0.0, 0.0, 0, 0, Vector2(1, 0.988764), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="Balloon" type="Area2D"]
+
+[node name="Balloon" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.55271e-15, -89)
+scale = Vector2(3.4375, 3.4375)
+sprite_frames = SubResource("SpriteFrames_vby1k")
+autoplay = "default"
+frame_progress = 0.169308
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -59.5)
+shape = SubResource("RectangleShape2D_u4r1m")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 1, 0, -56)
+width = 2.0
+width_curve = SubResource("Curve_vby1k")
+default_color = Color(0.380096, 0.124458, 0.0508279, 1)

@@ -1,7 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://6rct088kruoa"]
+[gd_scene load_steps=27 format=3 uid="uid://6rct088kruoa"]
 
 [ext_resource type="PackedScene" uid="uid://dwqqfutaiwk2y" path="res://player.tscn" id="1_80nbo"]
-[ext_resource type="Script" path="res://game_manager.gd" id="1_iotsf"]
+[ext_resource type="Script" uid="uid://62vn2skadmni" path="res://game_manager.gd" id="1_iotsf"]
 [ext_resource type="AudioStream" uid="uid://d4isuu02op2a2" path="res://Assetes/Music/bg_track_virus.wav" id="1_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bdb3l80g4xwy6" path="res://Assetes/background.png" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://by5h4lypt0yos" path="res://virus_enemy.tscn" id="2_fc0e3"]
@@ -12,7 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://kpddc8vkccep" path="res://Assetes/no_highlight_inner_tissue.png" id="8_mfdv2"]
 [ext_resource type="Texture2D" uid="uid://g7ffpi3krptj" path="res://Assetes/bloodANDmuscle.png" id="9_vef74"]
 [ext_resource type="Texture2D" uid="uid://d36giayv15a04" path="res://Assetes/bone_effect.png" id="10_hve3p"]
+[ext_resource type="PackedScene" uid="uid://chvpvqcqpc6p4" path="res://Menu/menu.tscn" id="12_7sc4i"]
 [ext_resource type="PackedScene" uid="uid://dg1i8d733h83j" path="res://Collectible.tscn" id="13_lc2xo"]
+[ext_resource type="PackedScene" uid="uid://dmqdct0nyaq3b" path="res://White_blood_cell_enemy/white_blood_cell_enemy.tscn" id="14_215e1"]
+[ext_resource type="PackedScene" uid="uid://cw8sqymnjj1mt" path="res://Balloons/balloon.tscn" id="16_80cx4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ryrav"]
 texture = ExtResource("5_7jktm")
@@ -221,7 +224,61 @@ distance = -458.064
 [node name="Game" type="Node2D"]
 script = ExtResource("1_iotsf")
 
+[node name="canvas" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="canvas"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 1148.0
+offset_bottom = 645.0
+
+[node name="HP_bar" type="ProgressBar" parent="canvas/HUD"]
+modulate = Color(1, 0, 0, 1)
+z_index = 4
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 255.0
+offset_bottom = 30.0
+step = 1.0
+value = 20.0
+show_percentage = false
+
+[node name="Clone_cd" type="ProgressBar" parent="canvas/HUD"]
+modulate = Color(1, 0.0608277, 0.573751, 1)
+z_index = 4
+layout_mode = 0
+offset_left = 5.0
+offset_top = 40.0
+offset_right = 155.0
+offset_bottom = 60.0
+step = 0.005
+value = 100.0
+show_percentage = false
+
+[node name="Dash_cd" type="ProgressBar" parent="canvas/HUD"]
+modulate = Color(0, 0.572549, 1, 1)
+z_index = 4
+layout_mode = 0
+offset_left = 5.0
+offset_top = 70.0
+offset_right = 155.0
+offset_bottom = 90.0
+step = 0.005
+value = 100.0
+show_percentage = false
+
+[node name="Menu" parent="canvas" instance=ExtResource("12_7sc4i")]
+visible = false
+offset_left = 32.0
+offset_top = -56.0
+offset_right = 32.0
+offset_bottom = -56.0
+
 [node name="Background" type="Sprite2D" parent="."]
+z_index = -5
 position = Vector2(-33, -315)
 scale = Vector2(1.52604, 1.60494)
 texture = ExtResource("2_7jktm")
@@ -239,13 +296,10 @@ autoplay = true
 position = Vector2(-12, 12)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-visible = false
 zoom = Vector2(2.5, 2.5)
 process_callback = 0
 position_smoothing_enabled = true
-
-[node name="Virus_enemy" parent="." instance=ExtResource("2_fc0e3")]
-position = Vector2(118, 3)
+position_smoothing_speed = 10.0
 
 [node name="Collectibles" type="Node" parent="."]
 
@@ -267,7 +321,7 @@ position = Vector2(59, -271)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Virus_enemy" parent="Enemies" instance=ExtResource("2_fc0e3")]
-position = Vector2(118, 3)
+position = Vector2(130, 8)
 
 [node name="Virus_enemy2" parent="Enemies" instance=ExtResource("2_fc0e3")]
 position = Vector2(335, -78)
@@ -278,11 +332,11 @@ position = Vector2(-232, -55)
 [node name="Virus_enemy4" parent="Enemies" instance=ExtResource("2_fc0e3")]
 position = Vector2(-373, -122)
 
-[node name="Virus_enemy5" parent="Enemies" instance=ExtResource("2_fc0e3")]
-position = Vector2(-114, -196)
-
 [node name="Virus_enemy6" parent="Enemies" instance=ExtResource("2_fc0e3")]
 position = Vector2(-114, -180)
+
+[node name="White_blood_cell_enemy" parent="Enemies" instance=ExtResource("14_215e1")]
+position = Vector2(51, 7)
 
 [node name="world_boudary" type="StaticBody2D" parent="."]
 
@@ -292,3 +346,8 @@ shape = SubResource("WorldBoundaryShape2D_vef74")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="world_boudary"]
 shape = SubResource("WorldBoundaryShape2D_hve3p")
+
+[node name="Balloon" parent="." instance=ExtResource("16_80cx4")]
+position = Vector2(104, -256)
+
+[connection signal="body_entered" from="Balloon" to="." method="_on_balloon_body_entered"]
