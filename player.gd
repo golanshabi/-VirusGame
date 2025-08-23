@@ -17,7 +17,6 @@ const CLONE_RADIUS = 30
 var dash_duration = 0.2
 var hp = 100
 
-var score = 0
 
 @onready var audio_player = $AudioStreamPlayer2D
 @onready var HUD = get_node("/root/Game/canvas/HUD")
@@ -163,8 +162,11 @@ func trans_state():
 		jump_state += 1
 
 func increase_score(added_score):
-	score += added_score
-	print(score)
+	Globals.player_score += added_score
+	print(Globals.player_score)
+
+func get_score():
+	return Globals.player_score
 
 func play_random_hit_sound(array):
 	var random_index = randi() % array.size()
