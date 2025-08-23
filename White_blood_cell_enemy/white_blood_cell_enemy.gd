@@ -9,11 +9,11 @@ var freq = 15
 var max_time_limit = 10000000
 
 @export var flip_h : bool = false
+@export var chase_speed : int = 100
 
 var damage = 15
 var player
 var chasing : bool = false
-var chase_speed : int = 50
 var chase_deadzone = 30
 var direction = 1
 

@@ -126,6 +126,10 @@ pitch_scale = 2.0
 max_distance = 200.0
 bus = &"Effects"
 
+[node name="Siren" type="Sprite2D" parent="."]
+
+[node name="exclemation_sign" type="Sprite2D" parent="Siren"]
+
 [connection signal="body_entered" from="Player_Search_Zone" to="." method="_on_player_search_zone_body_entered"]
 [connection signal="body_exited" from="Player_Search_Zone" to="." method="_on_player_search_zone_body_exited"]
 [connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]
