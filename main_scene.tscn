@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b4ebt4sy6ewiq" path="res://score.gd" id="2_gyfs4"]
 [ext_resource type="AudioStream" uid="uid://d4isuu02op2a2" path="res://Assetes/Music/bg_track_virus.wav" id="2_nfk4m"]
 [ext_resource type="PackedScene" uid="uid://chvpvqcqpc6p4" path="res://Menu/menu.tscn" id="3_d5x1h"]
-[ext_resource type="PackedScene" uid="uid://mmoialtjh0mk" path="res://first_level.tscn" id="5_8mm7a"]
+[ext_resource type="PackedScene" uid="uid://7dtunis05r7t" path="res://Levels/third_level.tscn" id="4_hq1ik"]
 [ext_resource type="PackedScene" uid="uid://dwqqfutaiwk2y" path="res://player.tscn" id="5_hq1ik"]
 
 [sub_resource type="Gradient" id="Gradient_nfk4m"]
@@ -92,7 +92,7 @@ offset_top = -56.0
 offset_right = 32.0
 offset_bottom = -56.0
 
-[node name="FirstLevel" parent="." instance=ExtResource("5_8mm7a")]
+[node name="third_level" parent="." instance=ExtResource("4_hq1ik")]
 
 [node name="Player" parent="." instance=ExtResource("5_hq1ik")]
 position = Vector2(-10, -21)

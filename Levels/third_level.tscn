@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://by5h4lypt0yos" path="res://virus_enemy.tscn" id="15_0arrs"]
 [ext_resource type="PackedScene" uid="uid://dmqdct0nyaq3b" path="res://White_blood_cell_enemy/white_blood_cell_enemy.tscn" id="17_l5yr5"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wvh0i"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5yr5"]
 texture = ExtResource("1_vh6o8")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -102,7 +102,7 @@ texture_region_size = Vector2i(32, 32)
 6:7/0 = 0
 7:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o281h"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_el84j"]
 texture = ExtResource("2_kutk5")
 texture_region_size = Vector2i(32, 16)
 0:0/0 = 0
@@ -114,13 +114,13 @@ texture_region_size = Vector2i(32, 16)
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -7.64714, 16, -7.32851, 16, 6.37262, -16, 7.00988)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_52q83"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ncywn"]
 texture = ExtResource("3_0arrs")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.31863, -3.18631, -0.31863, -3.18631, 16, 16, -16, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xu4m3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1g5uh"]
 texture = ExtResource("4_0aq8j")
 texture_region_size = Vector2i(32, 32)
 0:3/0 = 0
@@ -128,7 +128,7 @@ texture_region_size = Vector2i(32, 32)
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -7.96577, -2.23041, -9.24029, 6.37262, -16, 16, -12.7452, 16, 9.55892, 1.27452, 11.1521, -16, 6.37262)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bm6c"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_coicp"]
 texture = ExtResource("5_l5yr5")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -164,7 +164,7 @@ texture_region_size = Vector2i(32, 32)
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0klso"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bp7hg"]
 texture = ExtResource("6_el84j")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -188,7 +188,7 @@ texture_region_size = Vector2i(32, 32)
 2:2/0 = 0
 3:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2t38g"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4m16t"]
 texture = ExtResource("7_ncywn")
 texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
@@ -201,7 +201,7 @@ texture_region_size = Vector2i(32, 32)
 2:3/0 = 0
 3:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eu4lv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oruas"]
 texture = ExtResource("8_1g5uh")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -209,7 +209,7 @@ texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 3:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xuqg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1ivm"]
 texture = ExtResource("9_coicp")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -221,7 +221,7 @@ texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o611u"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wvh0i"]
 texture = ExtResource("10_bp7hg")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -248,16 +248,16 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_q8qh0"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_wvh0i")
-sources/1 = SubResource("TileSetAtlasSource_o281h")
-sources/3 = SubResource("TileSetAtlasSource_xu4m3")
-sources/4 = SubResource("TileSetAtlasSource_2bm6c")
-sources/5 = SubResource("TileSetAtlasSource_0klso")
-sources/6 = SubResource("TileSetAtlasSource_2t38g")
-sources/7 = SubResource("TileSetAtlasSource_eu4lv")
-sources/2 = SubResource("TileSetAtlasSource_52q83")
-sources/8 = SubResource("TileSetAtlasSource_3xuqg")
-sources/9 = SubResource("TileSetAtlasSource_o611u")
+sources/0 = SubResource("TileSetAtlasSource_l5yr5")
+sources/1 = SubResource("TileSetAtlasSource_el84j")
+sources/3 = SubResource("TileSetAtlasSource_1g5uh")
+sources/4 = SubResource("TileSetAtlasSource_coicp")
+sources/5 = SubResource("TileSetAtlasSource_bp7hg")
+sources/6 = SubResource("TileSetAtlasSource_4m16t")
+sources/7 = SubResource("TileSetAtlasSource_oruas")
+sources/2 = SubResource("TileSetAtlasSource_ncywn")
+sources/8 = SubResource("TileSetAtlasSource_q1ivm")
+sources/9 = SubResource("TileSetAtlasSource_wvh0i")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hgebk"]
 normal = Vector2(-1, 0)
@@ -306,11 +306,20 @@ offset_top = -803.0
 offset_right = 2311.0
 offset_bottom = -66.0
 
+[node name="Desc1" type="RichTextLabel" parent="Tutorial text"]
+layout_mode = 0
+offset_left = -1147.0
+offset_top = 736.0
+offset_right = -893.0
+offset_bottom = 854.0
+text = "Sometimes you can't create enough clones, so you need to use the viruses instead.
+but be careful, not all platforms are strong enough for you."
+
 [node name="SpawnPoint" type="Node2D" parent="."]
 position = Vector2(34, -10)
 
 [node name="Balloon" parent="." instance=ExtResource("13_q1ivm")]
-position = Vector2(705, -480)
+position = Vector2(181, -367)
 
 [node name="Traps" type="Node2D" parent="."]
 
@@ -395,3 +404,5 @@ position = Vector2(528, 25)
 [node name="White_blood_cell_enemy" parent="." instance=ExtResource("17_l5yr5")]
 position = Vector2(304, -158)
 scale = Vector2(3, 3)
+chase_speed = 200
+hp = 100

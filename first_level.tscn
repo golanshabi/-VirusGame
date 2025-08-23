@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://mmoialtjh0mk"]
 
 [ext_resource type="Texture2D" uid="uid://8mbbbhf0ya5s" path="res://Assetes/tileset_1.png" id="1_rfkqk"]
-[ext_resource type="Script" uid="uid://1erbdbsavoei" path="res://level.gd" id="1_vag3g"]
+[ext_resource type="Script" uid="uid://1erbdbsavoei" path="res://Levels/level.gd" id="1_vag3g"]
 [ext_resource type="Texture2D" uid="uid://loi5qhhbrq35" path="res://Assetes/bone_slab_1.png" id="2_l1oci"]
 [ext_resource type="Texture2D" uid="uid://h34t1umq3lsy" path="res://Assetes/bone_ends.png" id="3_8o0y0"]
 [ext_resource type="Texture2D" uid="uid://cfteiwlevprig" path="res://Assetes/spike.webp" id="3_vag3g"]
