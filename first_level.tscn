@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://mmoialtjh0mk"]
+[gd_scene load_steps=29 format=3 uid="uid://debuncj5rml55"]
 
 [ext_resource type="Texture2D" uid="uid://8mbbbhf0ya5s" path="res://Assetes/tileset_1.png" id="1_rfkqk"]
 [ext_resource type="Script" uid="uid://1erbdbsavoei" path="res://Levels/level.gd" id="1_vag3g"]

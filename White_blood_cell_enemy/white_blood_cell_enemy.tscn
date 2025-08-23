@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dmqdct0nyaq3b"]
+[gd_scene load_steps=26 format=3 uid="uid://dmqdct0nyaq3b"]
 
 [ext_resource type="Script" uid="uid://coy7fvij2yr3n" path="res://White_blood_cell_enemy/white_blood_cell_enemy.gd" id="1_1hlju"]
 [ext_resource type="Texture2D" uid="uid://c2rvd0ilvmtko" path="res://Assetes/enemy_idle_1.png" id="1_or6mf"]
@@ -14,6 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://dxijegvlx8ax8" path="res://Assetes/explode_9.png" id="11_s3p82"]
 [ext_resource type="Texture2D" uid="uid://1ddikfilqihe" path="res://Assetes/explode_10.png" id="12_41va1"]
 [ext_resource type="AudioStream" uid="uid://bja4i6vq5huox" path="res://Assetes/Music/police_chase.wav" id="14_7xds7"]
+[ext_resource type="Texture2D" uid="uid://dhoxr2wkukiwg" path="res://Assetes/chakalaka.png" id="15_sdmr5"]
+[ext_resource type="Texture2D" uid="uid://buid4iyaf678m" path="res://Assetes/chakalaka_flipped.png" id="16_s3p82"]
+[ext_resource type="Texture2D" uid="uid://dv1f8hp16dppg" path="res://Assetes/chakalaka_flipped2.png" id="17_41va1"]
+[ext_resource type="Texture2D" uid="uid://vjmma32s0tik" path="res://Assetes/chakalaka_2.png" id="18_itv3l"]
+[ext_resource type="Texture2D" uid="uid://by3e2v1axm6i2" path="res://Assetes/expmark.png" id="19_t1twq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xds7"]
 size = Vector2(254, 142)
@@ -85,8 +90,28 @@ radius = 19.0
 size = Vector2(28, 8)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7xds7"]
-radius = 17.0183
-height = 41.9892
+radius = 20.0176
+height = 45.9881
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqde3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_sdmr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_s3p82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_41va1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_itv3l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="White_blood_cell_enemy" type="CharacterBody2D"]
 script = ExtResource("1_1hlju")
@@ -116,7 +141,7 @@ shape = SubResource("RectangleShape2D_1hlju")
 [node name="damage_player" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damage_player"]
-position = Vector2(2.38419e-07, 1)
+position = Vector2(-4.89386e-13, 1)
 rotation = -1.54808
 shape = SubResource("CapsuleShape2D_7xds7")
 
@@ -127,9 +152,22 @@ pitch_scale = 2.0
 max_distance = 200.0
 bus = &"Effects"
 
-[node name="Siren" type="Sprite2D" parent="."]
+[node name="Siren" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -2
+position = Vector2(0, -40)
+scale = Vector2(0.28125, 0.28125)
+sprite_frames = SubResource("SpriteFrames_qqde3")
+autoplay = "default"
+frame_progress = 0.688752
 
 [node name="exclemation_sign" type="Sprite2D" parent="Siren"]
+modulate = Color(1, 1, 1, 0.545098)
+z_index = -2
+position = Vector2(-67.5556, 56.8889)
+rotation = -0.290045
+scale = Vector2(1.83333, 1.61111)
+texture = ExtResource("19_t1twq")
 
 [connection signal="body_entered" from="Player_Search_Zone" to="." method="_on_player_search_zone_body_entered"]
 [connection signal="body_exited" from="Player_Search_Zone" to="." method="_on_player_search_zone_body_exited"]

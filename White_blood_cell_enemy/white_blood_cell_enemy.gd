@@ -11,9 +11,10 @@ var max_time_limit = 10000000
 @export var chase_speed : int = 100
 @export var chase_radius_scale : int = 1
 @export var hp : int = 30
+@export var damage = 15
 
+@onready var siren = $Siren
 
-var damage = 15
 var player
 var chasing : bool = false
 var chase_deadzone = 30
@@ -48,11 +49,16 @@ func hit_enemy():
 	
 func _process(delta):
 	if !dead:
+		if not is_on_floor():
+			var gravity = get_gravity() * delta
+			velocity += gravity
+			
 		time += delta * freq
 		if(time > max_time_limit):
 			time = start_seed
 		position.y += sin(time) * mag
 		if chasing and player != null:
+			siren.visible = true
 			if global_position.x < player.global_position.x - chase_deadzone:
 				$AnimatedSprite2D.flip_h = false
 				direction = 1
@@ -60,9 +66,10 @@ func _process(delta):
 				$AnimatedSprite2D.flip_h = true
 				direction = -1
 			velocity.x = chase_speed * direction
-			move_and_slide()
 		else:
+			siren.visible = false
 			velocity.x = 0
+		move_and_slide()
 	else:
 		$AudioStreamPlayer2D.playing = false
 
