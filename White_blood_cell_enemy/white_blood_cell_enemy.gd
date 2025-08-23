@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-var hp = 30
 var dead : bool = false	
 var time : float = 0.0 
 var start_seed = 0
@@ -11,6 +10,7 @@ var max_time_limit = 10000000
 @export var flip_h : bool = false
 @export var chase_speed : int = 100
 @export var chase_radius_scale : int = 1
+@export var hp : int = 30
 
 
 var damage = 15

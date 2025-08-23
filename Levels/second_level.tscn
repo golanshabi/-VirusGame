@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://c2ue2xlfcbkso" path="res://Assetes/blood_type_no_highlight.png" id="9_08uyg"]
 [ext_resource type="Texture2D" uid="uid://b5nhmdwpwqhr5" path="res://Assetes/bloodandmusclev2.png" id="10_ewcgs"]
 [ext_resource type="Texture2D" uid="uid://bdb3l80g4xwy6" path="res://Assetes/background.png" id="11_i223p"]
-[ext_resource type="PackedScene" uid="uid://dg1i8d733h83j" path="res://Collectable/Collectible.tscn" id="12_kroub"]
+[ext_resource type="PackedScene" uid="uid://dg1i8d733h83j" path="res://Collectible.tscn" id="12_kroub"]
 [ext_resource type="PackedScene" uid="uid://cw8sqymnjj1mt" path="res://Balloons/balloon.tscn" id="14_861ko"]
-[ext_resource type="PackedScene" uid="uid://by5h4lypt0yos" path="res://Virus_enemy/virus_enemy.tscn" id="15_eug6x"]
+[ext_resource type="PackedScene" uid="uid://by5h4lypt0yos" path="res://virus_enemy.tscn" id="15_eug6x"]
 [ext_resource type="PackedScene" uid="uid://xfdcvae00px6" path="res://Pill_enemy/pill_enemy.tscn" id="16_76i8v"]
 [ext_resource type="PackedScene" uid="uid://dmqdct0nyaq3b" path="res://White_blood_cell_enemy/white_blood_cell_enemy.tscn" id="17_hlgml"]
 
