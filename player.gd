@@ -19,10 +19,10 @@ var hp = 100
 
 
 @onready var audio_player = $AudioStreamPlayer2D
-@onready var HUD = get_node("/root/Game/canvas/HUD")
-@onready var HP_bar = get_node("/root/Game/canvas/HUD/HP_bar")
-@onready var Dash_cd_bar = get_node("/root/Game/canvas/HUD/Dash_cd")
-@onready var Clone_cd_bar = get_node("/root/Game/canvas/HUD/Clone_cd")
+@onready var HUD = get_node("/root/main_scene/canvas/HUD")
+@onready var HP_bar = get_node("/root/main_scene/canvas/HUD/HP_bar")
+@onready var Dash_cd_bar = get_node("/root/main_scene/canvas/HUD/Dash_cd")
+@onready var Clone_cd_bar = get_node("/root/main_scene/canvas/HUD/Clone_cd")
 
 var enemy_hit_sound_array = []
 var player_hit_sound_array = []

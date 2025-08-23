@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var player = $Player
-@onready var menu = get_node("/root/main_scene/canvas/Menu")
+@onready var menu = get_node("/root/Game/canvas/Menu")
 
 func _ready():
 	menu.visible = false

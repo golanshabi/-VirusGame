@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://cetgiwh6gv250"]
+
+[ext_resource type="PackedScene" uid="uid://6rct088kruoa" path="res://game.tscn" id="1_0f027"]
+[ext_resource type="Script" uid="uid://62vn2skadmni" path="res://game_manager.gd" id="1_8mm7a"]
+[ext_resource type="Script" uid="uid://b4ebt4sy6ewiq" path="res://score.gd" id="2_gyfs4"]
+[ext_resource type="PackedScene" uid="uid://chvpvqcqpc6p4" path="res://Menu/menu.tscn" id="3_d5x1h"]
+[ext_resource type="PackedScene" uid="uid://dwqqfutaiwk2y" path="res://player.tscn" id="5_hq1ik"]
+
+[node name="main_scene" type="Node2D"]
+script = ExtResource("1_8mm7a")
+
+[node name="Game" parent="." instance=ExtResource("1_0f027")]
+script = null
+
+[node name="canvas" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="canvas"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1145.0
+offset_bottom = 639.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="HP_bar" type="ProgressBar" parent="canvas/HUD"]
+modulate = Color(1, 0, 0, 1)
+z_index = 4
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 255.0
+offset_bottom = 30.0
+step = 1.0
+value = 20.0
+show_percentage = false
+
+[node name="Clone_cd" type="ProgressBar" parent="canvas/HUD"]
+modulate = Color(1, 0.0608277, 0.573751, 1)
+z_index = 4
+layout_mode = 0
+offset_left = 5.0
+offset_top = 40.0
+offset_right = 155.0
+offset_bottom = 60.0
+step = 0.005
+value = 100.0
+show_percentage = false
+
+[node name="Dash_cd" type="ProgressBar" parent="canvas/HUD"]
+modulate = Color(0, 0.572549, 1, 1)
+z_index = 4
+layout_mode = 0
+offset_left = 5.0
+offset_top = 70.0
+offset_right = 155.0
+offset_bottom = 90.0
+step = 0.005
+value = 100.0
+show_percentage = false
+
+[node name="Score" type="RichTextLabel" parent="canvas/HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.947598
+anchor_right = 1.05066
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+script = ExtResource("2_gyfs4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" parent="canvas" instance=ExtResource("3_d5x1h")]
+visible = false
+offset_left = 32.0
+offset_top = -56.0
+offset_right = 32.0
+offset_bottom = -56.0
+
+[node name="Player" parent="." instance=ExtResource("5_hq1ik")]
