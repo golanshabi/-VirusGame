@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmxw6180wlfwq"]
+
+[ext_resource type="Script" uid="uid://d0jmox1qhfc6i" path="res://trigger_dissappear.gd" id="1_nc7ym"]
+[ext_resource type="Texture2D" uid="uid://cxmnm0e8usfo2" path="res://Assetes/pink.webp" id="2_sn61i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sa41e"]
+size = Vector2(31, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxdqp"]
+size = Vector2(32, 31.5)
+
+[node name="BreakingSlab" type="StaticBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_nc7ym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 13)
+shape = SubResource("RectangleShape2D_sa41e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 13)
+texture = ExtResource("2_sn61i")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 13.25)
+shape = SubResource("RectangleShape2D_bxdqp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

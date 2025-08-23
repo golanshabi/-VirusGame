@@ -17,6 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://dlsywgjylnkgy" path="res://Traps/spike.tscn" id="14_kutk5"]
 [ext_resource type="PackedScene" uid="uid://by5h4lypt0yos" path="res://Virus_enemy/virus_enemy.tscn" id="15_0arrs"]
 [ext_resource type="PackedScene" uid="uid://dmqdct0nyaq3b" path="res://White_blood_cell_enemy/white_blood_cell_enemy.tscn" id="17_l5yr5"]
+[ext_resource type="PackedScene" uid="uid://cefgpbcc3he2x" path="res://Traps/BreakingSlab.tscn" id="18_el84j"]
+[ext_resource type="Script" uid="uid://bkty40vwuou8k" path="res://Levels/node_2d.gd" id="19_1g5uh"]
+[ext_resource type="PackedScene" uid="uid://ji53ssohqski" path="res://Turret/turret.tscn" id="19_ncywn"]
+[ext_resource type="PackedScene" uid="uid://bmxw6180wlfwq" path="res://trigger_slab.tscn" id="21_coicp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5yr5"]
 texture = ExtResource("1_vh6o8")
@@ -402,9 +406,23 @@ position = Vector2(368, 26)
 [node name="Virus_enemy2" parent="." instance=ExtResource("15_0arrs")]
 position = Vector2(528, 25)
 
-[node name="White_blood_cell_enemy" parent="." instance=ExtResource("17_l5yr5")]
-position = Vector2(304, -158)
+[node name="BreakingSlab2" parent="." instance=ExtResource("18_el84j")]
+position = Vector2(528, 34)
+
+[node name="BreakingSlab" parent="." instance=ExtResource("18_el84j")]
+position = Vector2(368, 34)
+
+[node name="Turret" parent="." instance=ExtResource("19_ncywn")]
+position = Vector2(-17, -272)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-157, 29)
+script = ExtResource("19_1g5uh")
+
+[node name="White_blood_cell_enemy" parent="Node2D" instance=ExtResource("17_l5yr5")]
+position = Vector2(550, -188)
 scale = Vector2(3, 3)
 hp = 100
 
 [connection signal="body_entered" from="Balloon" to="." method="_on_balloon_body_entered"]
+
