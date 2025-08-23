@@ -2,14 +2,14 @@ extends CharacterBody2D
 
 
 const SPEED = 200.0
-const DASH_SPEED = 300
+const DASH_SPEED = 350
 const gravity_mult = 1.2
 const JUMP_SINGLE_VELOCITY = -325.0
 const GRAVITY_REDUCTION_RATIO = 0.6
-const DASH_COOLDOWN_SEC = 2.5
+const DASH_COOLDOWN_SEC = 0.5
 
-const CLONE_DURATION = 3
-const CLONE_COOLDOWN = 3
+const CLONE_DURATION = 1.5
+const CLONE_COOLDOWN = 2
 const CLONE_RADIUS = 30
 
 # State variables
@@ -25,14 +25,30 @@ var dead : bool = false
 @onready var dash = $Dash
 @onready var cloner = $cloner
 var last_direction = 1
+var jump_state : JumpState = JumpState.FLOOR
+
+enum JumpState {
+	TRANS_JUMP,
+	JUMP,
+	TRANS_FLOOR,
+	FLOOR
+}
 
 func _physics_process(delta: float) -> void:
 	if dead:
 		print("dead")
 		return
-		
+
+	if (jump_state == JumpState.FLOOR && !is_on_floor()):
+		jump_state = JumpState.TRANS_JUMP
+	elif (jump_state == JumpState.JUMP && is_on_floor()):
+		jump_state = JumpState.TRANS_FLOOR
+
 	if Input.is_action_just_pressed("dash") and dash.is_dash_allowed() and Input.get_axis("ui_left", "ui_right") and !is_in_knockback:
-		dash.startDashing(dash_duration, DASH_COOLDOWN_SEC, $AnimatedSprite2D)
+		dash.startDashing(dash_duration, DASH_COOLDOWN_SEC, $AnimatedSprite2D, !is_on_floor())
+
+	if jump_state == JumpState.TRANS_FLOOR:
+		dash.set_stop_flying()
 	# Add the gravity.
 	if not is_on_floor():
 		var gravity = get_gravity() * delta * gravity_mult
@@ -79,6 +95,7 @@ func _physics_process(delta: float) -> void:
 		if knockback_force <= 0:
 			knockback_force = 0
 			is_in_knockback = false
+	trans_state()
 	move_and_slide()
 
 func boost_up():
@@ -97,3 +114,7 @@ func hit_player(damage : int):
 		$AnimatedSprite2D.modulate = Color.WHITE # Flash white
 		await get_tree().create_timer(0.1).timeout # Wait for 0.1 seconds
 		$AnimatedSprite2D.modulate = Color.WHITE # Return to normal (removes tint)
+
+func trans_state():
+	if jump_state == JumpState.TRANS_FLOOR || jump_state == JumpState.TRANS_JUMP:
+		jump_state += 1
