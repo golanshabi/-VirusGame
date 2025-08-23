@@ -8,9 +8,12 @@ var mag = 0.2
 var freq = 15
 var max_time_limit = 10000000
 
+@export var flip_h : bool = false
+
 func _ready():
 	start_seed = randf()
 	time = start_seed * 1000
+	$AnimatedSprite2D.flip_h = flip_h
 
 func hit_enemy():
 	if !dead:

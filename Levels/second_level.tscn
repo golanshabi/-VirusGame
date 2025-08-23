@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ifwsf1fymy1s"]
+[gd_scene load_steps=31 format=3 uid="uid://ifwsf1fymy1s"]
 
 [ext_resource type="Texture2D" uid="uid://8mbbbhf0ya5s" path="res://Assetes/tileset_1.png" id="1_44p27"]
 [ext_resource type="Script" uid="uid://1erbdbsavoei" path="res://Levels/level.gd" id="1_enfa2"]
@@ -13,8 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://b5nhmdwpwqhr5" path="res://Assetes/bloodandmusclev2.png" id="10_ewcgs"]
 [ext_resource type="Texture2D" uid="uid://bdb3l80g4xwy6" path="res://Assetes/background.png" id="11_i223p"]
 [ext_resource type="PackedScene" uid="uid://dg1i8d733h83j" path="res://Collectable/Collectible.tscn" id="12_kroub"]
-[ext_resource type="PackedScene" uid="uid://dlsywgjylnkgy" path="res://Traps/spike.tscn" id="13_tvacj"]
 [ext_resource type="PackedScene" uid="uid://cw8sqymnjj1mt" path="res://Balloons/balloon.tscn" id="14_861ko"]
+[ext_resource type="PackedScene" uid="uid://by5h4lypt0yos" path="res://Virus_enemy/virus_enemy.tscn" id="15_eug6x"]
+[ext_resource type="PackedScene" uid="uid://xfdcvae00px6" path="res://Pill_enemy/pill_enemy.tscn" id="16_76i8v"]
+[ext_resource type="PackedScene" uid="uid://dmqdct0nyaq3b" path="res://White_blood_cell_enemy/white_blood_cell_enemy.tscn" id="17_hlgml"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ff50"]
 texture = ExtResource("1_44p27")
@@ -255,7 +257,7 @@ sources/9 = SubResource("TileSetAtlasSource_chnos")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gtnjh"]
 normal = Vector2(-1, 0)
-distance = -604.0
+distance = -869.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p0bkc"]
 normal = Vector2(1, 0)
@@ -273,7 +275,7 @@ texture = ExtResource("11_i223p")
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kgvoj")
 format = 2
-layer_0/tile_data = PackedInt32Array(524281, 5, 0, 524282, 65541, 0, 524283, 131077, 0, 524284, 196613, 0, 524285, 5, 0, 524286, 65541, 0, 524287, 131077, 0, 458752, 196613, 0, 458753, 5, 0, 458754, 65541, 0, 458755, 131077, 0, 458756, 196613, 0, 458757, 5, 0, 458758, 65541, 0, 458759, 131077, 0, 458760, 196613, 0, 458761, 5, 0, 458762, 65541, 0, 458763, 131077, 0, 458764, 196613, 0, 458765, 5, 0, 458766, 65541, 0, 458767, 131077, 0, 458768, 196613, 0)
+layer_0/tile_data = PackedInt32Array(524281, 5, 0, 524282, 65541, 0, 524283, 131077, 0, 524284, 196613, 0, 524285, 5, 0, 524286, 65541, 0, 524287, 131077, 0, 458752, 196613, 0, 458753, 5, 0, 458754, 65541, 0, 458755, 131077, 0, 458756, 196613, 0, 458757, 5, 0, 458758, 65541, 0, 458759, 131077, 0, 458760, 196613, 0, 458761, 5, 0, 458762, 65541, 0, 458763, 131077, 0, 458764, 196613, 0, 458765, 5, 0, 458766, 65541, 0, 458767, 131077, 0, 458768, 196613, 0, 393232, 5, 0, 393233, 65541, 0, 393234, 131077, 0, 393235, 196613, 0, 327700, 5, 0, 327701, 65541, 0, 327702, 131077, 0, 327703, 196613, 0, 327704, 5, 0, 327705, 65541, 0, 327706, 131077, 0, 327707, 196613, 0, 327708, 5, 0, 327709, 65541, 0, 327710, 131077, 0, 327711, 196613, 0, 393248, 5, 0, 393249, 65541, 0, 393250, 131077, 0, 393251, 196613, 0, 327716, 5, 0, 327717, 65541, 0, 327718, 131077, 0, 327719, 196613, 0, 65570, 5, 0, 65571, 65541, 0, 65572, 131077, 0, 65566, 5, 0, 65567, 65541, 0, 65568, 131077, 0, 65569, 196613, 0, 65562, 5, 0, 65563, 65541, 0, 65564, 131077, 0, 65565, 196613, 0, 23, 5, 0, 24, 65541, 0, 25, 131077, 0, 26, 196613, 0, 38, 5, 0, 327720, 5, 0, 327721, 65541, 0, 327722, 131077, 0, 327723, 196613, 0, 262187, 5, 1610612736, 196651, 65541, 1610612736, 131115, 131077, 1610612736, 65579, 196613, 1610612736, 43, 5, 1610612736, -65493, 65541, 1610612736, -131029, 131077, 1610612736, -196565, 196613, 1610612736, -262101, 5, 1610612736, -327637, 5, 1610612736, -393173, 65541, 1610612736, -458709, 131077, 1610612736, -589781, 5, 1610612736, -655317, 65541, 1610612736, -720853, 131077, 1610612736, -786389, 196613, 1610612736, -524245, 196613, 1610612736, -851925, 5, 1610612736, -917461, 65541, 1610612736, -982997, 131077, 1610612736, -1048533, 196613, 1610612736, -1114069, 5, 1610612736, -1179605, 65541, 1610612736, -1245141, 131077, 1610612736, -1310677, 196613, 1610612736, -1376213, 5, 1610612736, -1441749, 65541, 1610612736, -1507285, 131077, 1610612736, -1572821, 196613, 1610612736, -1638357, 5, 1610612736, -1703893, 65541, 1610612736, -1769429, 131077, 1610612736, -1834965, 196613, 1610612736, 262137, 5, 1342177280, 327673, 65541, 1342177280, 393209, 131077, 1342177280, 458745, 196613, 1342177280, 262136, 5, 1342177280, 327672, 65541, 1342177280, 393208, 131077, 1342177280, 458744, 196613, 1342177280, -7, 5, 1342177280, 65529, 65541, 1342177280, 131065, 131077, 1342177280, 196601, 196613, 1342177280, -262151, 5, 1342177280, -196615, 65541, 1342177280, -131079, 131077, 1342177280, -65543, 196613, 1342177280, -524295, 5, 1342177280, -458759, 65541, 1342177280, -393223, 131077, 1342177280, -327687, 196613, 1342177280, -786439, 5, 1342177280, -720903, 65541, 1342177280, -655367, 131077, 1342177280, -589831, 196613, 1342177280, -1048583, 5, 1342177280, -983047, 65541, 1342177280, -917511, 131077, 1342177280, -851975, 196613, 1342177280, -1048584, 5, 1342177280, -983048, 65541, 1342177280, -917512, 131077, 1342177280, -851976, 196613, 1342177280, -1310728, 5, 1342177280, -1245192, 65541, 1342177280, -1179656, 131077, 1342177280, -1114120, 196613, 1342177280, -1310727, 5, 1342177280, -1245191, 65541, 1342177280, -1179655, 131077, 1342177280, -1114119, 196613, 1342177280, -1572871, 5, 1342177280, -1507335, 65541, 1342177280, -1441799, 131077, 1342177280, -1376263, 196613, 1342177280, -1835015, 5, 1342177280, -1769479, 65541, 1342177280, -1703943, 131077, 1342177280, -1638407, 196613, 1342177280, 65575, 5, 0, 37, 5, 0)
 
 [node name="Tutorial text" type="Control" parent="."]
 layout_mode = 3
@@ -284,12 +286,22 @@ offset_right = 1095.0
 offset_bottom = 44.0
 
 [node name="Desc1" type="RichTextLabel" parent="Tutorial text"]
+z_index = -3
 layout_mode = 0
 offset_left = -10.0
 offset_top = 770.0
 offset_right = 254.0
 offset_bottom = 888.0
-text = "Although most viruses are friendly, some might not be or even worse... you can run into the immune system😱"
+text = "Although most viruses are friendly, some might not be or even worse... you can run into the immune system and drugs😱"
+
+[node name="Desc2" type="RichTextLabel" parent="Tutorial text"]
+z_index = -3
+layout_mode = 0
+offset_left = 512.0
+offset_top = 706.0
+offset_right = 776.0
+offset_bottom = 824.0
+text = "The best solution for these matters is to siply bop them on the head affectionately"
 
 [node name="world_boudary" type="StaticBody2D" parent="."]
 
@@ -303,21 +315,37 @@ shape = SubResource("WorldBoundaryShape2D_p0bkc")
 [node name="Collectibles" type="Node" parent="."]
 
 [node name="Collectible" parent="Collectibles" instance=ExtResource("12_kroub")]
-position = Vector2(230, 8)
+position = Vector2(368, 202)
 
-[node name="spike" parent="." instance=ExtResource("13_tvacj")]
-position = Vector2(879, -60)
+[node name="Collectible2" parent="Collectibles" instance=ExtResource("12_kroub")]
+position = Vector2(399, 202)
 
-[node name="spike2" parent="." instance=ExtResource("13_tvacj")]
-position = Vector2(911, -60)
+[node name="Collectible3" parent="Collectibles" instance=ExtResource("12_kroub")]
+position = Vector2(431, 202)
 
-[node name="spike3" parent="." instance=ExtResource("13_tvacj")]
-position = Vector2(944, -60)
+[node name="Collectible4" parent="Collectibles" instance=ExtResource("12_kroub")]
+position = Vector2(1217, 50)
 
 [node name="SpawnPoint" type="Node2D" parent="."]
 position = Vector2(-84, 204)
 
 [node name="Balloon" parent="." instance=ExtResource("14_861ko")]
 position = Vector2(399, -5)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Virus_enemy" parent="Enemies" instance=ExtResource("15_eug6x")]
+position = Vector2(663, 137)
+
+[node name="Virus_enemy2" parent="Enemies" instance=ExtResource("15_eug6x")]
+position = Vector2(883, 139)
+flip_h = true
+
+[node name="Pill_enemy" parent="Enemies" instance=ExtResource("16_76i8v")]
+position = Vector2(882, 14)
+
+[node name="White_blood_cell_enemy" parent="Enemies" instance=ExtResource("17_hlgml")]
+position = Vector2(1122, 165)
+flip_h = true
 
 [connection signal="body_entered" from="Balloon" to="." method="_on_balloon_body_entered"]

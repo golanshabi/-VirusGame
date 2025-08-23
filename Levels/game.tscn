@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://d4isuu02op2a2" path="res://Assetes/Music/bg_track_virus.wav" id="1_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bdb3l80g4xwy6" path="res://Assetes/background.png" id="2_7jktm"]
 [ext_resource type="Script" uid="uid://b4ebt4sy6ewiq" path="res://score.gd" id="2_e8heu"]
-[ext_resource type="PackedScene" uid="uid://by5h4lypt0yos" path="res://virus_enemy.tscn" id="2_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://by5h4lypt0yos" path="res://Virus_enemy/virus_enemy.tscn" id="2_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://8mbbbhf0ya5s" path="res://Assetes/tileset_1.png" id="5_7jktm"]
 [ext_resource type="Texture2D" uid="uid://loi5qhhbrq35" path="res://Assetes/bone_slab_1.png" id="6_ryrav"]
 [ext_resource type="Texture2D" uid="uid://h34t1umq3lsy" path="res://Assetes/bone_ends.png" id="7_eow3j"]

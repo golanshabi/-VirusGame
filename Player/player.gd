@@ -197,3 +197,4 @@ func play_random_hit_sound(array):
 
 func respawn():
 	hp = 100
+	HP_bar.value = hp

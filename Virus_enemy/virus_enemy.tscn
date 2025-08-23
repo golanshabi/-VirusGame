@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://by5h4lypt0yos"]
+
+[ext_resource type="Script" uid="uid://0n4v17psvlbw" path="res://Virus_enemy/virus_enemy.gd" id="1_7r43d"]
+[ext_resource type="Texture2D" uid="uid://c25fhs52chjts" path="res://Assetes/enemy_basic_idle.png" id="2_r4606"]
+[ext_resource type="Script" uid="uid://i3tiykq0qq63" path="res://Virus_enemy/hit_box.gd" id="2_sliqx"]
+[ext_resource type="Script" uid="uid://c257fg25eckvh" path="res://Virus_enemy/damage_area.gd" id="3_qcgxb"]
+[ext_resource type="Texture2D" uid="uid://cnia1jbcj114f" path="res://Assetes/enemy_basic_idle_2.png" id="3_ycwlv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_184po"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r4606")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ycwlv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sliqx"]
+radius = 11.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7r43d"]
+radius = 11.9999
+height = 28.0086
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r43d"]
+size = Vector2(20, 4)
+
+[node name="Virus_enemy" type="CharacterBody2D"]
+script = ExtResource("1_7r43d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_184po")
+autoplay = "default"
+frame_progress = 0.682463
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_sliqx")
+
+[node name="Hit_box" type="Area2D" parent="."]
+script = ExtResource("2_sliqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_box"]
+position = Vector2(0, 2)
+rotation = -1.57526
+shape = SubResource("CapsuleShape2D_7r43d")
+
+[node name="Damage_area" type="Area2D" parent="."]
+script = ExtResource("3_qcgxb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_area"]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_7r43d")
+
+[connection signal="body_entered" from="Hit_box" to="Hit_box" method="_on_body_entered"]
+[connection signal="body_entered" from="Damage_area" to="Damage_area" method="_on_body_entered"]
