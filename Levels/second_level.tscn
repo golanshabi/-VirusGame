@@ -353,5 +353,6 @@ ROLL_COOLDOWN = 3
 [node name="White_blood_cell_enemy" parent="Enemies" instance=ExtResource("17_hlgml")]
 position = Vector2(1122, 165)
 flip_h = true
+hit_cooldown = 0.5
 
 [connection signal="body_entered" from="Balloon" to="." method="_on_balloon_body_entered"]

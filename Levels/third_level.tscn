@@ -317,7 +317,7 @@ text = "Sometimes you can't create enough clones, so you need to use the viruses
 but be careful, not all platforms are strong enough for you."
 
 [node name="SpawnPoint" type="Node2D" parent="."]
-position = Vector2(467, -136)
+position = Vector2(654, -240)
 
 [node name="Balloon" parent="." instance=ExtResource("13_q1ivm")]
 position = Vector2(181, -367)

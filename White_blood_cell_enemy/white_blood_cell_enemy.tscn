@@ -84,14 +84,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_356tl"]
-radius = 19.0
+radius = 22.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1hlju"]
 size = Vector2(28, 8)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7xds7"]
-radius = 20.0176
-height = 45.9881
+radius = 21.0173
+height = 48.033
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qqde3"]
 animations = [{
@@ -130,6 +130,7 @@ autoplay = "default"
 frame_progress = 0.107756
 
 [node name="PhysicalCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_356tl")
 
 [node name="hit_box" type="Area2D" parent="."]
@@ -141,9 +142,13 @@ shape = SubResource("RectangleShape2D_1hlju")
 [node name="damage_player" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damage_player"]
-position = Vector2(-4.89386e-13, 1)
+position = Vector2(9.3137e-09, 4)
 rotation = -1.54808
 shape = SubResource("CapsuleShape2D_7xds7")
+
+[node name="Timer" type="Timer" parent="damage_player"]
+wait_time = 0.3
+one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_7xds7")
@@ -159,7 +164,7 @@ position = Vector2(0, -40)
 scale = Vector2(0.28125, 0.28125)
 sprite_frames = SubResource("SpriteFrames_qqde3")
 autoplay = "default"
-frame_progress = 0.688752
+frame_progress = 0.235085
 
 [node name="exclemation_sign" type="Sprite2D" parent="Siren"]
 modulate = Color(1, 1, 1, 0.545098)
@@ -173,3 +178,5 @@ texture = ExtResource("19_t1twq")
 [connection signal="body_exited" from="Player_Search_Zone" to="." method="_on_player_search_zone_body_exited"]
 [connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_entered" from="damage_player" to="." method="_on_damage_player_body_entered"]
+[connection signal="body_exited" from="damage_player" to="." method="_on_damage_player_body_exited"]
+[connection signal="body_shape_entered" from="damage_player" to="." method="_on_damage_player_body_shape_entered"]

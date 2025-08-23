@@ -152,6 +152,7 @@ func kill_player():
 	hp = 0
 	dead = true
 	$AnimatedSprite2D.play("death")
+	$CollisionShape2D.disabled = true
 	var tween_fade = get_tree().create_tween()
 	tween_fade = get_tree().create_tween()
 	tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
@@ -196,5 +197,6 @@ func play_random_hit_sound(array):
 
 
 func respawn():
+	$CollisionShape2D.disabled = false
 	hp = 100
 	HP_bar.value = hp

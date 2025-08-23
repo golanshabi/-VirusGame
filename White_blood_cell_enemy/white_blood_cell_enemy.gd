@@ -12,10 +12,15 @@ var max_time_limit = 10000000
 @export var chase_radius_scale : int = 1
 @export var hp : int = 30
 @export var damage = 15
+@export var hit_cooldown : float = 1
 
 @onready var siren = $Siren
 
-var player
+@onready var hit_cooldown_timer = $damage_player/Timer
+
+var player_in_collision = null
+
+var player = null
 var chasing : bool = false
 var chase_deadzone = 30
 var direction = 1
@@ -27,6 +32,8 @@ func _ready():
 	start_seed = randf()
 	time = start_seed * 1000
 	$Player_Search_Zone.scale.x = chase_radius_scale
+	hit_cooldown_timer.wait_time = hit_cooldown
+	hit_cooldown_timer.start()
 
 func hit_enemy():
 	if !dead:
@@ -52,12 +59,18 @@ func _process(delta):
 		if not is_on_floor():
 			var gravity = get_gravity() * delta
 			velocity += gravity
-			
+		
 		time += delta * freq
 		if(time > max_time_limit):
 			time = start_seed
 		position.y += sin(time) * mag
 		if chasing and player != null:
+			if player_in_collision != null:
+				if hit_cooldown_timer.is_stopped():
+					player.hit_player(damage)
+					hit_cooldown_timer.wait_time = hit_cooldown
+					hit_cooldown_timer.start()
+
 			siren.visible = true
 			if global_position.x < player.global_position.x - chase_deadzone:
 				$AnimatedSprite2D.flip_h = false
@@ -77,7 +90,7 @@ func _process(delta):
 
 func _on_damage_player_body_entered(body):
 	if body.name == "Player" and !dead:
-		body.hit_player(damage)
+		player_in_collision = body
 
 
 func _on_hit_box_body_entered(body):
@@ -100,4 +113,8 @@ func _on_player_search_zone_body_exited(body):
 		chasing = false
 		$AudioStreamPlayer2D.playing = false
 		$AnimatedSprite2D.play("idle")
-		
+
+
+func _on_damage_player_body_exited(body):
+	if body.name == "Player" and !dead:
+		player_in_collision = null
