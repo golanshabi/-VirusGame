@@ -140,13 +140,16 @@ func apply_knockback():
 	is_in_knockback = true
 	knockback_force = max_knockback_force
 
+func kill_player():
+	hp = 0
+	dead = true
+	$AnimatedSprite2D.play("death")
+
 func hit_player(damage : int):
 	play_random_hit_sound(player_hit_sound_array)
 	hp -= damage
 	if hp <= 0:
-		hp = 0
-		dead = true
-		$AnimatedSprite2D.play("death")
+		kill_player()
 	else:
 		apply_knockback()
 		var tween_fade = get_tree().create_tween()
