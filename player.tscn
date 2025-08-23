@@ -9,12 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bp8r0t7b02xg0" path="res://PlayerAbilities/dash/dash.tscn" id="5_sweqy"]
 [ext_resource type="Texture2D" uid="uid://oecm2h82gh1m" path="res://brackeys_platformer_assets/sprites/PlayerSprites/move_2.webp" id="6_dw050"]
 [ext_resource type="PackedScene" uid="uid://bxktvj86vfu1r" path="res://PlayerAbilities/clone/cloner.tscn" id="9_b26j0"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
-radius = 11.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
-radius = 12.0
+[ext_resource type="Texture2D" uid="uid://bra7ebt07f5gp" path="res://Assetes/copy_idle_1.png" id="10_n7ghd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
 animations = [{
@@ -55,23 +50,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 13.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_onrkg")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -14)
-shape = SubResource("CircleShape2D_hqtel")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -10)
-shape = SubResource("CircleShape2D_onrkg")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -13)
+position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_1jxqw")
 animation = &"dash"
 autoplay = "idle"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_onrkg")
+
 [node name="Dash" parent="." instance=ExtResource("5_sweqy")]
 
 [node name="cloner" parent="." instance=ExtResource("9_b26j0")]
+
+[node name="clone_aim" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.301961)
+position = Vector2(62, 13)
+texture = ExtResource("10_n7ghd")

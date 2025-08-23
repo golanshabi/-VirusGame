@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://6rct088kruoa"]
+[gd_scene load_steps=16 format=3 uid="uid://6rct088kruoa"]
 
 [ext_resource type="PackedScene" uid="uid://dwqqfutaiwk2y" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://bdb3l80g4xwy6" path="res://Assetes/background.png" id="2_7jktm"]
 [ext_resource type="Texture2D" uid="uid://chxlyqrm4qed8" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://by5h4lypt0yos" path="res://virus_enemy.tscn" id="2_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://8mbbbhf0ya5s" path="res://Assetes/tileset_1.png" id="5_7jktm"]
+[ext_resource type="Texture2D" uid="uid://loi5qhhbrq35" path="res://Assetes/bone_slab_1.png" id="6_ryrav"]
+[ext_resource type="Texture2D" uid="uid://h34t1umq3lsy" path="res://Assetes/bone_ends.png" id="7_eow3j"]
+[ext_resource type="Texture2D" uid="uid://yjp5p7aq5jl0" path="res://Assetes/tileset_v2.png" id="8_j5wjh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 texture = ExtResource("2_e2o6t")
@@ -243,20 +246,78 @@ texture_region_size = Vector2i(32, 32)
 6:7/0 = 0
 7:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eow3j"]
+texture = ExtResource("6_ryrav")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -7.64714, 16, -7.32851, 16, 6.37262, -16, 7.00988)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -7.64714, 16, -7.32851, 16, 6.37262, -16, 7.00988)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -7.64714, 16, -7.32851, 16, 6.37262, -16, 7.00988)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -7.64714, 16, -7.32851, 16, 6.37262, -16, 7.00988)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5wjh"]
+texture = ExtResource("7_eow3j")
+texture_region_size = Vector2i(32, 32)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -11.7893, -7.64714, -16, 2.54905, -8.2844, 16, -8.2844, 16, 6.69125, -4.1422, 11.7893, -16, 6.37262)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -7.96577, -2.23041, -9.24029, 6.37262, -16, 16, -12.7452, 16, 9.55892, 1.27452, 11.1521, -16, 6.37262)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vef74"]
+texture = ExtResource("8_j5wjh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, -16, -16, 16, -16, 16, 16)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, -16, -16, 16, -16, 16, 16)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
 [sub_resource type="TileSet" id="TileSet_eow3j"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ryrav")
+sources/1 = SubResource("TileSetAtlasSource_eow3j")
+sources/3 = SubResource("TileSetAtlasSource_j5wjh")
+sources/4 = SubResource("TileSetAtlasSource_vef74")
 
 [node name="Game" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.703808, 0.703808, 0.703808, 1)
-position = Vector2(-20, -186)
+position = Vector2(-20, -171)
 texture = ExtResource("2_7jktm")
 
 [node name="Player" parent="." instance=ExtResource("1_80nbo")]
-position = Vector2(0, -12)
+position = Vector2(-19, 12)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
@@ -272,21 +333,21 @@ layer_0/tile_data = PackedInt32Array(65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0,
 layer_1/name = "Layer1"
 
 [node name="Virus_enemy" parent="." instance=ExtResource("2_fc0e3")]
-position = Vector2(128, -20)
+position = Vector2(118, 3)
 
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_eow3j")
 format = 2
-layer_0/tile_data = PackedInt32Array(65533, 131072, 3, 65534, 196608, 3, 65535, 0, 3, 0, 65536, 3, 1, 131072, 3, 2, 0, 3, 3, 196608, 3, 4, 65536, 3, 5, 0, 3, 6, 131072, 3, 7, 65536, 3, 8, 65536, 3, 9, 0, 3, 10, 65536, 3, 11, 0, 3, 12, 65536, 3, 13, 0, 3, 14, 65536, 3, 15, 0, 3, -196599, 65536, 2, -196598, 131072, 2, -262133, 0, 2, -327668, 0, 2, -327667, 131072, 2, -131064, 196608, 2, -3, 0, 2, -4, 0, 2, -5, 65536, 3, 65532, 0, 3, 65531, 196608, 3, 65530, 131072, 3, 65529, 196608, 3, -7, 196608, 3, -8, 65536, 3, -65544, 196608, 3, -65545, 65536, 3, -131081, 0, 3, -131082, 196608, 3, -262150, 0, 0, -262149, 65536, 0, -262148, 0, 0, -327682, 0, 0, -393218, 0, 0, -393217, 65536, 0, -524288, 0, 0, -524287, 65536, 0, -524286, 0, 0, -524285, 65536, 0, -131083, 131072, 3, -131084, 65536, 3, -196620, 0, 3, -196621, 131072, 3, -196622, 0, 3, -196623, 0, 3, -196624, 0, 3, -196625, 196608, 3, -262161, 0, 3, -262162, 0, 3, -196626, 196608, 3, -131090, 0, 3, -131089, 196608, 3, -131088, 196608, 3, -131087, 0, 3, -131086, 0, 3, -131085, 0, 3, -65550, 0, 3, -65551, 196608, 3, -65547, 196608, 3, -65548, 196608, 3, -65549, 0, 3, -10, 0, 3, -9, 0, 3, -65546, 196608, 3, 65528, 196608, 3, 131068, 196608, 3, 131069, 0, 3, 131070, 196608, 3, 131071, 0, 3, 65536, 196608, 3, 65537, 196608, 3, -327683, 131072, 0, -65543, 65536, 3, -6, 196608, 3, -65541, 65536, 2, -65542, 196608, 2, 65538, 196608, 3, 65539, 65536, 3, 65540, 65536, 3, 65541, 131072, 3, 65542, 131072, 3, 65543, 131072, 3, 65544, 196608, 3, 65546, 196608, 3, 65547, 131072, 3, 65545, 196608, 3, 65549, 196608, 3, 65548, 131072, 3, 16, 131072, 3)
+layer_0/tile_data = PackedInt32Array(-262150, 0, 0, -262149, 65536, 0, -262148, 0, 0, -327682, 0, 0, -393218, 0, 0, -393217, 65536, 0, -524288, 0, 0, -524287, 65536, 0, -524286, 0, 0, -524285, 65536, 0, -327683, 131072, 0, -458764, 131073, 0, -458765, 65537, 0, -458766, 131073, 0, -458767, 1, 0, -131090, 196608, 3, -131089, 196608, 3, -131088, 0, 3, -131087, 0, 3, -65551, 0, 3, -131086, 0, 3, -65550, 0, 3, -131085, 131072, 3, -65549, 0, 3, -131084, 0, 3, -65548, 65536, 3, -65547, 131072, 3, -65546, 196608, 3, -10, 196608, 3, -65545, 0, 3, -9, 65536, 3, -8, 196608, 3, 65528, 65536, 3, -7, 65536, 3, 65529, 196608, 3, 65530, 196608, 3, 65531, 65536, 3, 131070, 131072, 3, 131071, 131072, 3, 65536, 131072, 3, 65537, 131072, 3, 65538, 0, 3, 65539, 196608, 3, 65540, 65536, 3, 65541, 0, 3, 65542, 131072, 3, 65543, 65536, 3, 65544, 65536, 3, -131063, 3, 3, 65545, 0, 3, -131062, 1, 0, 65546, 65536, 3, 65547, 0, 3, 65548, 65536, 3, 65549, 0, 3, -65554, 0, 3, -65553, 196608, 3, -65552, 196608, 3, -15, 196608, 3, -14, 0, 3, -13, 0, 3, -12, 196608, 3, -11, 196608, 3, 65526, 0, 3, 65527, 0, 3, 131064, 196608, 3, 131065, 196608, 3, 131066, 131072, 3, 131067, 196608, 3, 196604, 196608, 3, 196605, 0, 3, 196606, 196608, 3, 196607, 0, 3, 131072, 196608, 3, 131073, 196608, 3, 131074, 196608, 3, 131075, 65536, 3, 131076, 65536, 3, -65531, 3, 3, 131077, 131072, 3, -65530, 1, 0, 131078, 131072, 3, -65529, 65537, 0, 131079, 131072, 3, -65528, 131073, 0, 131080, 196608, 3, -65527, 1, 0, 131081, 196608, 3, -65526, 196611, 3, 131082, 196608, 3, -131061, 1, 0, 131083, 131072, 3, -131060, 65537, 0, 131084, 131072, 3, -131059, 196611, 3, 131085, 196608, 3, 65550, 65536, 3, 65551, 0, 3, 65552, 131072, 3, -196626, 0, 3, -196625, 0, 3, 131069, 131072, 3, 131068, 0, 3)
 
 [node name="Virus_enemy2" parent="." instance=ExtResource("2_fc0e3")]
-position = Vector2(333, -113)
+position = Vector2(335, -78)
 
 [node name="Virus_enemy3" parent="." instance=ExtResource("2_fc0e3")]
-position = Vector2(-233, -82)
+position = Vector2(-232, -55)
 
 [node name="Virus_enemy4" parent="." instance=ExtResource("2_fc0e3")]
-position = Vector2(-374, -148)
+position = Vector2(-373, -122)
 
 [node name="Virus_enemy5" parent="." instance=ExtResource("2_fc0e3")]
 position = Vector2(-114, -180)

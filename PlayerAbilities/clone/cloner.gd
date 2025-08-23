@@ -6,7 +6,7 @@ var clone = preload("res://PlayerAbilities/clone/clone.tscn")
 @onready var Sprite
 var global_position
 
-func do_clone(cooldown, position):
+func do_clone(cooldown, dest_pos):
 	#check_position_area.position = position
 	#print(check_position_area.cloning_allowed)
 	#if !check_position_area.cloning_allowed:
@@ -14,7 +14,7 @@ func do_clone(cooldown, position):
 		#return
 	cooldown_timer.wait_time = cooldown
 	cooldown_timer.start()
-	global_position = position
+	global_position = dest_pos
 	
 	instance_clone()
 	

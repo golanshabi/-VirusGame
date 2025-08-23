@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b38mvnep71vtp" path="res://Assetes/copy_idle_3.png" id="4_tmjwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wuudt"]
-size = Vector2(1500, 1400)
+size = Vector2(1350, 1300)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v3kim"]
 animations = [{
@@ -33,9 +33,10 @@ scale = Vector2(0.2, 0.2)
 script = ExtResource("1_wuudt")
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(-7.15256e-06, 1.19209e-05)
+position = Vector2(-2.5, 1.19209e-05)
 scale = Vector2(0.0999999, 0.0999999)
 shape = SubResource("RectangleShape2D_wuudt")
+one_way_collision = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(5, 4.58333)
