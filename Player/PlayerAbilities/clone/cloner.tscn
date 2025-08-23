@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxktvj86vfu1r"]
+
+[ext_resource type="Script" uid="uid://7l7n66ivmy1g" path="res://Player/PlayerAbilities/clone/cloner.gd" id="1_5yfi1"]
+[ext_resource type="Texture2D" uid="uid://b3plesdvsyhex" path="res://icon.svg" id="2_1ltua"]
+[ext_resource type="Script" uid="uid://bw8ryuskr8ohc" path="res://Player/PlayerAbilities/clone/check_valid_clone_position.gd" id="2_ahds5"]
+
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahds5"]
+size = Vector2(30, 33)
+
+[node name="cloner" type="Node"]
+script = ExtResource("1_5yfi1")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Check_valid_clone_position" type="Area2D" parent="."]
+visible = false
+monitoring = false
+monitorable = false
+script = ExtResource("2_ahds5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Check_valid_clone_position"]
+visible = false
+texture = ExtResource("2_1ltua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Check_valid_clone_position"]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_ahds5")
+
+[connection signal="body_shape_entered" from="Check_valid_clone_position" to="." method="_on_check_valid_clone_position_body_shape_entered"]
+[connection signal="body_shape_entered" from="Check_valid_clone_position" to="Check_valid_clone_position" method="_on_body_shape_entered"]

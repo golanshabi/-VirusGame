@@ -1,0 +1,133 @@
+[gd_scene load_steps=21 format=3 uid="uid://dwqqfutaiwk2y"]
+
+[ext_resource type="Script" uid="uid://sab3jvp0s260" path="res://Player/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dwi3ibjcrf76c" path="res://Assetes/dead 1.png" id="2_b26j0"]
+[ext_resource type="Texture2D" uid="uid://wpsqc6ts8rc2" path="res://Assetes/dead 2.png" id="3_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://bjmhdvs14xhnm" path="res://Assetes/dead 3.png" id="4_nvl01"]
+[ext_resource type="Texture2D" uid="uid://2ytejm0ogp6" path="res://Assetes/dead 4.png" id="5_ivps1"]
+[ext_resource type="PackedScene" uid="uid://bp8r0t7b02xg0" path="res://Player/PlayerAbilities/dash/dash.tscn" id="5_sweqy"]
+[ext_resource type="Texture2D" uid="uid://bjpfnsyt6vt5t" path="res://Assetes/dead 5.png" id="6_urp6f"]
+[ext_resource type="PackedScene" uid="uid://bxktvj86vfu1r" path="res://Player/PlayerAbilities/clone/cloner.tscn" id="9_b26j0"]
+[ext_resource type="Texture2D" uid="uid://bra7ebt07f5gp" path="res://Assetes/copy_idle_1.png" id="10_n7ghd"]
+[ext_resource type="PackedScene" uid="uid://cesr32p3lk6st" path="res://Player/PlayerAbilities/hit_effect.tscn" id="10_nvl01"]
+[ext_resource type="PackedScene" uid="uid://cdg41e02o8hhr" path="res://Player/PlayerAbilities/dash_effect.tscn" id="11_nvl01"]
+[ext_resource type="Texture2D" uid="uid://cude2tltvplyy" path="res://Assetes/finish_level_mask.png" id="12_5htga"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqtel"]
+load_path = "res://.godot/imported/dash1.webp-27e29935b2a957ba7cc7222b0d86ad72.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sweqy"]
+load_path = "res://.godot/imported/main_idle_2.png-304cde4bf416b0ea3b14ec7dee70e6d4.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2hs0m"]
+load_path = "res://.godot/imported/main_idle.webp-60ea3a1f53a01d5d7d651b2426ca8d48.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1jxqw"]
+load_path = "res://.godot/imported/main_idle_3.webp-f6805acbecb0cce26df9d910d847a791.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dw050"]
+load_path = "res://.godot/imported/move_1.webp-7a320dfa5fbc691c9380843338b99b0c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b26j0"]
+load_path = "res://.godot/imported/move_2.webp-c591241d1be0b6db97c55b00dfe7fc1f.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_hqtel")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b26j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n7ghd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nvl01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ivps1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_urp6f")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_sweqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_2hs0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_sweqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_1jxqw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_dw050")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_b26j0")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 13.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_onrkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_1jxqw")
+animation = &"death"
+autoplay = "idle"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_onrkg")
+
+[node name="Dash" parent="." instance=ExtResource("5_sweqy")]
+
+[node name="cloner" parent="." instance=ExtResource("9_b26j0")]
+
+[node name="clone_aim" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.301961)
+position = Vector2(62, 13)
+texture = ExtResource("10_n7ghd")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"Effects"
+
+[node name="Hit_effect" parent="." instance=ExtResource("10_nvl01")]
+
+[node name="Dash_effect" parent="." instance=ExtResource("11_nvl01")]
+
+[node name="Finish_level_mask" type="Sprite2D" parent="."]
+visible = false
+z_index = 15
+position = Vector2(2, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("12_5htga")
