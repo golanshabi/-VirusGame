@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://7dtunis05r7t"]
+[gd_scene load_steps=31 format=3 uid="uid://7dtunis05r7t"]
 
 [ext_resource type="Script" uid="uid://1erbdbsavoei" path="res://Levels/level.gd" id="1_0aq8j"]
 [ext_resource type="Texture2D" uid="uid://8mbbbhf0ya5s" path="res://Assetes/tileset_1.png" id="1_vh6o8"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cw8sqymnjj1mt" path="res://Balloons/balloon.tscn" id="13_q1ivm"]
 [ext_resource type="PackedScene" uid="uid://dlsywgjylnkgy" path="res://Traps/spike.tscn" id="14_kutk5"]
 [ext_resource type="PackedScene" uid="uid://by5h4lypt0yos" path="res://virus_enemy.tscn" id="15_0arrs"]
+[ext_resource type="PackedScene" uid="uid://dmqdct0nyaq3b" path="res://White_blood_cell_enemy/white_blood_cell_enemy.tscn" id="17_l5yr5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wvh0i"]
 texture = ExtResource("1_vh6o8")
@@ -390,3 +391,7 @@ position = Vector2(368, 26)
 
 [node name="Virus_enemy2" parent="." instance=ExtResource("15_0arrs")]
 position = Vector2(528, 25)
+
+[node name="White_blood_cell_enemy" parent="." instance=ExtResource("17_l5yr5")]
+position = Vector2(304, -158)
+scale = Vector2(3, 3)
