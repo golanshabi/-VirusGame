@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cetgiwh6gv250"]
+[gd_scene load_steps=8 format=3 uid="uid://cetgiwh6gv250"]
 
 [ext_resource type="Script" uid="uid://62vn2skadmni" path="res://game_manager.gd" id="1_8mm7a"]
 [ext_resource type="Script" uid="uid://b4ebt4sy6ewiq" path="res://score.gd" id="2_gyfs4"]
+[ext_resource type="AudioStream" uid="uid://d4isuu02op2a2" path="res://Assetes/Music/bg_track_virus.wav" id="2_nfk4m"]
 [ext_resource type="PackedScene" uid="uid://chvpvqcqpc6p4" path="res://Menu/menu.tscn" id="3_d5x1h"]
 [ext_resource type="PackedScene" uid="uid://mmoialtjh0mk" path="res://first_level.tscn" id="5_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://dwqqfutaiwk2y" path="res://player.tscn" id="5_hq1ik"]
+
+[sub_resource type="Gradient" id="Gradient_nfk4m"]
+colors = PackedColorArray(1, 0, 0, 0.807843, 1, 0, 0, 0.517647)
 
 [node name="main_scene" type="Node2D"]
 script = ExtResource("1_8mm7a")
@@ -66,6 +70,21 @@ grow_horizontal = 0
 script = ExtResource("2_gyfs4")
 metadata/_edit_use_anchors_ = true
 
+[node name="blood_particles" type="CPUParticles2D" parent="canvas/HUD"]
+z_index = -3
+position = Vector2(600, 0)
+amount = 200
+emission_shape = 3
+emission_rect_extents = Vector2(800, 1)
+direction = Vector2(0, 1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 900.0
+orbit_velocity_min = -0.3
+orbit_velocity_max = 0.3
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_nfk4m")
+
 [node name="Menu" parent="canvas" instance=ExtResource("3_d5x1h")]
 visible = false
 offset_left = 32.0
@@ -73,12 +92,22 @@ offset_top = -56.0
 offset_right = 32.0
 offset_bottom = -56.0
 
+[node name="FirstLevel" parent="." instance=ExtResource("5_8mm7a")]
+
 [node name="Player" parent="." instance=ExtResource("5_hq1ik")]
+position = Vector2(-10, -21)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2.5, 2.5)
+visible = false
+zoom = Vector2(2.2, 2.2)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="FirstLevel" parent="." instance=ExtResource("5_8mm7a")]
+[node name="Music_player" type="AudioStreamPlayer2D" parent="Player"]
+visible = false
+stream = ExtResource("2_nfk4m")
+autoplay = true
+max_distance = 4096.0
+panning_strength = 0.0
+bus = &"Music"

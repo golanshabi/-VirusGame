@@ -31,6 +31,7 @@ var knockback_force : float = 0.0
 var max_knockback_force : float = 400
 var knockback_divider = 10
 var is_in_knockback : bool = false
+
 var dead : bool = false
 
 @onready var dash = $Dash
@@ -144,6 +145,12 @@ func kill_player():
 	hp = 0
 	dead = true
 	$AnimatedSprite2D.play("death")
+	var tween_fade = get_tree().create_tween()
+	tween_fade = get_tree().create_tween()
+	tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
+	await tween_fade.finished
+	tween_fade = get_tree().create_tween()
+	tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.02)
 
 func hit_player(damage : int):
 	play_random_hit_sound(player_hit_sound_array)
@@ -177,3 +184,7 @@ func play_random_hit_sound(array):
 	var random_index = randi() % array.size()
 	audio_player.stream = array[random_index]
 	audio_player.play()
+
+
+func respawn():
+	hp = 100

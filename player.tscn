@@ -118,6 +118,7 @@ position = Vector2(62, 13)
 texture = ExtResource("10_n7ghd")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"Effects"
 
 [node name="Hit_effect" parent="." instance=ExtResource("10_nvl01")]
 

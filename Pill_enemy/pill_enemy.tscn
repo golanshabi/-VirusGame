@@ -1,0 +1,171 @@
+[gd_scene load_steps=25 format=3 uid="uid://xfdcvae00px6"]
+
+[ext_resource type="Script" uid="uid://cwa602sv8ill" path="res://Pill_enemy/pill_enemy.gd" id="1_4xgj0"]
+[ext_resource type="Texture2D" uid="uid://j2lf22walfjl" path="res://Assetes/pill/pill idle 1.png" id="1_l6720"]
+[ext_resource type="Texture2D" uid="uid://bn34ttnpdv8y2" path="res://Assetes/pill/pill idle 2.png" id="2_4xgj0"]
+[ext_resource type="Texture2D" uid="uid://cgp1drh8038g7" path="res://Assetes/pill/prep roll 2 (after idle 1).png" id="3_ccgo8"]
+[ext_resource type="Texture2D" uid="uid://cs5lhbo0tp6hg" path="res://Assetes/pill/prep roll 3.png" id="4_vxyr0"]
+[ext_resource type="Texture2D" uid="uid://r3lb5522gee6" path="res://Assetes/pill/death pill 1.png" id="4_x6hu4"]
+[ext_resource type="Texture2D" uid="uid://5cdax4fbttih" path="res://Assetes/pill/prep roll 4.png" id="5_bevgg"]
+[ext_resource type="Texture2D" uid="uid://ctdkhqkyqp616" path="res://Assetes/pill/death pill 2.png" id="5_snibm"]
+[ext_resource type="Texture2D" uid="uid://cof7vur2g4xtc" path="res://Assetes/pill/death pill 3.png" id="6_co58g"]
+[ext_resource type="Texture2D" uid="uid://cbijqivpewlad" path="res://Assetes/pill/prep roll 5or roll.png" id="6_s4mbk"]
+[ext_resource type="Texture2D" uid="uid://cjvteqchfw70i" path="res://Assetes/pill/death pill 4.png" id="7_qsaww"]
+[ext_resource type="Texture2D" uid="uid://cj0x7kdq56nbg" path="res://Assetes/pill/death pill 5.png" id="8_wp085"]
+[ext_resource type="Texture2D" uid="uid://b2cmk3es0qe1j" path="res://Assetes/pill/death pill 6.png" id="9_l0l66"]
+[ext_resource type="Texture2D" uid="uid://bvxut7b7haur2" path="res://Assetes/pill/death pill 7.png" id="10_sp01l"]
+[ext_resource type="Texture2D" uid="uid://bub1pek52rf1" path="res://Assetes/pill/death pill 8.png" id="11_k81xm"]
+[ext_resource type="Texture2D" uid="uid://b0l4r5k5oukjr" path="res://Assetes/pill/death pill 9.png" id="12_feva3"]
+[ext_resource type="Texture2D" uid="uid://bnqkd5yco3k1c" path="res://Assetes/pill/death pill 10.png" id="13_ibgd0"]
+[ext_resource type="Texture2D" uid="uid://ylfusqpjx08q" path="res://Assetes/pill/death pill 11.png" id="14_nrcoh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5yetl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x6hu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_snibm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_co58g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qsaww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wp085")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l0l66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sp01l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k81xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_feva3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ibgd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_nrcoh")
+}],
+"loop": false,
+"name": &"death",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l6720")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ccgo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vxyr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bevgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s4mbk")
+}],
+"loop": false,
+"name": &"get_into_roll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_s4mbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bevgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vxyr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ccgo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_l6720")
+}],
+"loop": false,
+"name": &"get_out_of_roll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l6720")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4xgj0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6720"]
+radius = 6.0
+height = 26.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x6hu4"]
+radius = 11.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6720"]
+size = Vector2(7, 5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4xgj0"]
+radius = 9.0
+height = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6hu4"]
+size = Vector2(27, 12.5)
+
+[node name="Pill_enemy" type="CharacterBody2D"]
+script = ExtResource("1_4xgj0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5yetl")
+animation = &"idle"
+frame_progress = 0.902955
+
+[node name="PhysicalCollider_pill" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_l6720")
+
+[node name="PhysicalCollider_circle" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_x6hu4")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_l6720")
+
+[node name="damage_player" type="Area2D" parent="."]
+
+[node name="PillCollider" type="CollisionShape2D" parent="damage_player"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_4xgj0")
+
+[node name="RollCoolDownTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Check_terrain" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Check_terrain"]
+position = Vector2(0.5, -3.25)
+shape = SubResource("RectangleShape2D_x6hu4")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="damage_player" to="." method="_on_damage_player_body_entered"]
+[connection signal="body_shape_entered" from="Check_terrain" to="." method="_on_check_terrain_body_shape_entered"]
