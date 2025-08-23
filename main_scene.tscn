@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cetgiwh6gv250"]
+[gd_scene load_steps=6 format=3 uid="uid://cetgiwh6gv250"]
 
 [ext_resource type="Script" uid="uid://62vn2skadmni" path="res://game_manager.gd" id="1_8mm7a"]
 [ext_resource type="Script" uid="uid://b4ebt4sy6ewiq" path="res://score.gd" id="2_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://chvpvqcqpc6p4" path="res://Menu/menu.tscn" id="3_d5x1h"]
+[ext_resource type="PackedScene" uid="uid://mmoialtjh0mk" path="res://first_level.tscn" id="5_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://dwqqfutaiwk2y" path="res://player.tscn" id="5_hq1ik"]
 
 [node name="main_scene" type="Node2D"]
@@ -73,3 +74,11 @@ offset_right = 32.0
 offset_bottom = -56.0
 
 [node name="Player" parent="." instance=ExtResource("5_hq1ik")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.5, 2.5)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="FirstLevel" parent="." instance=ExtResource("5_8mm7a")]
