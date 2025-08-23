@@ -1,7 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://6rct088kruoa"]
+[gd_scene load_steps=24 format=3 uid="uid://6rct088kruoa"]
 
 [ext_resource type="PackedScene" uid="uid://dwqqfutaiwk2y" path="res://player.tscn" id="1_80nbo"]
-[ext_resource type="Script" uid="uid://62vn2skadmni" path="res://game_manager.gd" id="1_iotsf"]
+[ext_resource type="Script" path="res://game_manager.gd" id="1_iotsf"]
 [ext_resource type="AudioStream" uid="uid://d4isuu02op2a2" path="res://Assetes/Music/bg_track_virus.wav" id="1_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bdb3l80g4xwy6" path="res://Assetes/background.png" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://by5h4lypt0yos" path="res://virus_enemy.tscn" id="2_fc0e3"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://kpddc8vkccep" path="res://Assetes/no_highlight_inner_tissue.png" id="8_mfdv2"]
 [ext_resource type="Texture2D" uid="uid://g7ffpi3krptj" path="res://Assetes/bloodANDmuscle.png" id="9_vef74"]
 [ext_resource type="Texture2D" uid="uid://d36giayv15a04" path="res://Assetes/bone_effect.png" id="10_hve3p"]
+[ext_resource type="PackedScene" uid="uid://dg1i8d733h83j" path="res://Collectible.tscn" id="13_lc2xo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ryrav"]
 texture = ExtResource("5_7jktm")
@@ -246,16 +247,41 @@ position_smoothing_enabled = true
 [node name="Virus_enemy" parent="." instance=ExtResource("2_fc0e3")]
 position = Vector2(118, 3)
 
-[node name="Virus_enemy2" parent="." instance=ExtResource("2_fc0e3")]
+[node name="Collectibles" type="Node" parent="."]
+
+[node name="Collectible" parent="Collectibles" instance=ExtResource("13_lc2xo")]
+position = Vector2(241, -33)
+
+[node name="Collectible2" parent="Collectibles" instance=ExtResource("13_lc2xo")]
+position = Vector2(403, -66)
+
+[node name="Collectible3" parent="Collectibles" instance=ExtResource("13_lc2xo")]
+position = Vector2(-558, -134)
+
+[node name="Collectible4" parent="Collectibles" instance=ExtResource("13_lc2xo")]
+position = Vector2(-462, -254)
+
+[node name="Collectible5" parent="Collectibles" instance=ExtResource("13_lc2xo")]
+position = Vector2(59, -271)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Virus_enemy" parent="Enemies" instance=ExtResource("2_fc0e3")]
+position = Vector2(118, 3)
+
+[node name="Virus_enemy2" parent="Enemies" instance=ExtResource("2_fc0e3")]
 position = Vector2(335, -78)
 
-[node name="Virus_enemy3" parent="." instance=ExtResource("2_fc0e3")]
+[node name="Virus_enemy3" parent="Enemies" instance=ExtResource("2_fc0e3")]
 position = Vector2(-232, -55)
 
-[node name="Virus_enemy4" parent="." instance=ExtResource("2_fc0e3")]
+[node name="Virus_enemy4" parent="Enemies" instance=ExtResource("2_fc0e3")]
 position = Vector2(-373, -122)
 
-[node name="Virus_enemy5" parent="." instance=ExtResource("2_fc0e3")]
+[node name="Virus_enemy5" parent="Enemies" instance=ExtResource("2_fc0e3")]
+position = Vector2(-114, -196)
+
+[node name="Virus_enemy6" parent="Enemies" instance=ExtResource("2_fc0e3")]
 position = Vector2(-114, -180)
 
 [node name="world_boudary" type="StaticBody2D" parent="."]

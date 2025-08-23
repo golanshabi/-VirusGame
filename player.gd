@@ -16,6 +16,8 @@ const CLONE_RADIUS = 30
 var dash_duration = 0.2
 var hp = 100
 
+var score = 0
+
 var knockback_force : float = 0.0
 var max_knockback_force : float = 400
 var knockback_divider = 10
@@ -117,6 +119,14 @@ func hit_player(damage : int):
 		await tween_fade.finished
 		tween_fade = get_tree().create_tween()
 		tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.05)
+		await tween_fade.finished
+		queue_free()
+
+
 func trans_state():
 	if jump_state == JumpState.TRANS_FLOOR || jump_state == JumpState.TRANS_JUMP:
 		jump_state += 1
+
+func increase_score(added_score):
+	score += added_score
+	print(score)
