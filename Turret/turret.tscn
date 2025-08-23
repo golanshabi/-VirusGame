@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ji53ssohqski"]
+
+[ext_resource type="Texture2D" uid="uid://cjigyyrwkun28" path="res://Turret/turret.webp" id="1_tjdg3"]
+[ext_resource type="Script" uid="uid://cjqqfeuil40tw" path="res://spawner.gd" id="2_c5apd"]
+
+[node name="Turret" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tjdg3")
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(12, 1)
+script = ExtResource("2_c5apd")
+
+[node name="CoolDownTimer" type="Timer" parent="."]
+one_shot = true

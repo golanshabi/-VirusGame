@@ -16,7 +16,6 @@ const CLONE_RADIUS = 30
 # State variables
 var dash_duration = 0.2
 var hp = 100
-var hp_gain_from_coins = 10
 
 
 @onready var audio_player = $AudioStreamPlayer2D
@@ -24,7 +23,6 @@ var hp_gain_from_coins = 10
 @onready var HP_bar = get_node("/root/main_scene/canvas/HUD/HP_bar")
 @onready var Dash_cd_bar = get_node("/root/main_scene/canvas/HUD/Dash_cd")
 @onready var Clone_cd_bar = get_node("/root/main_scene/canvas/HUD/Clone_cd")
-@onready var finish_level_mask = $Finish_level_mask
 
 var enemy_hit_sound_array = []
 var player_hit_sound_array = []
@@ -48,12 +46,7 @@ enum JumpState {
 	FLOOR
 }
 
-func reset_level_mask():
-	finish_level_mask.visible = false
-	finish_level_mask.scale = Vector2(2,2)
-
 func _ready():
-	reset_level_mask()
 	player_hit_sound_array.append(preload("res://Assetes/Music/hit_effect_1.wav"))
 	player_hit_sound_array.append(preload("res://Assetes/Music/hit_effect_2.wav"))
 	enemy_hit_sound_array.append(preload("res://Assetes/Music/enemy_hit_1.wav"))
@@ -153,7 +146,6 @@ func kill_player():
 	hp = 0
 	dead = true
 	$AnimatedSprite2D.play("death")
-	$CollisionShape2D.disabled = true
 	var tween_fade = get_tree().create_tween()
 	tween_fade = get_tree().create_tween()
 	tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
@@ -162,8 +154,6 @@ func kill_player():
 	tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.02)
 
 func hit_player(damage : int):
-	if should_pause:
-		return
 	play_random_hit_sound(player_hit_sound_array)
 	hp -= damage
 	if hp <= 0:
@@ -183,8 +173,6 @@ func trans_state():
 		jump_state += 1
 
 func increase_score(added_score, sound):
-	hp = 100 if hp + hp_gain_from_coins > 100 else hp + hp_gain_from_coins
-	HP_bar.value = hp
 	Globals.player_score += added_score
 	audio_player.stream = sound
 	audio_player.play()
@@ -200,6 +188,4 @@ func play_random_hit_sound(array):
 
 
 func respawn():
-	$CollisionShape2D.disabled = false
 	hp = 100
-	HP_bar.value = hp
