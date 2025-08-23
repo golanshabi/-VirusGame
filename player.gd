@@ -6,7 +6,7 @@ const DASH_SPEED = 350
 const gravity_mult = 1.2
 const JUMP_SINGLE_VELOCITY = -325.0
 const GRAVITY_REDUCTION_RATIO = 0.6
-const DASH_COOLDOWN_SEC = 0.5
+const DASH_COOLDOWN_SEC = 0.2
 
 const CLONE_DURATION = 1.5
 const CLONE_COOLDOWN = 2
@@ -59,8 +59,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor() and !is_in_knockback:
 		velocity.y = JUMP_SINGLE_VELOCITY
 	
-	var clone_dir : Vector2 = get_global_mouse_position() - global_position
-	var vec : Vector2 = global_position + clone_dir.normalized() * CLONE_RADIUS
+	#var clone_dir : Vector2 = get_global_mouse_position() - global_position
+	var vec : Vector2 = global_position + Vector2.DOWN * CLONE_RADIUS
 	$clone_aim.global_position = vec
 	
 	if Input.is_action_pressed("clone_aim") and cloner.is_clone_allowed() and !is_in_knockback:
@@ -111,10 +111,13 @@ func hit_player(damage : int):
 	if hp <= 0:
 		dead = true
 	else:
-		$AnimatedSprite2D.modulate = Color.WHITE # Flash white
-		await get_tree().create_timer(0.1).timeout # Wait for 0.1 seconds
-		$AnimatedSprite2D.modulate = Color.WHITE # Return to normal (removes tint)
-
+		var tween_fade = get_tree().create_tween()
+		var white_value = 200
+		tween_fade.tween_property(self, "modulate", Color(white_value, white_value, white_value, 1.0), 0.05)
+		await tween_fade.finished
+		tween_fade = get_tree().create_tween()
+		tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.05)
+		await tween_fade.finished
 func trans_state():
 	if jump_state == JumpState.TRANS_FLOOR || jump_state == JumpState.TRANS_JUMP:
 		jump_state += 1
