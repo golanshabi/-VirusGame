@@ -13,7 +13,11 @@ var max_time_limit = 10000000
 @export var hp : int = 30
 @export var damage = 15
 @export var hit_cooldown : float = 1
+@export var ignore_physical : bool = false
+@export var respawn_on_death = false
+@export var color : Color = Color(255,255,255)
 
+var start_position
 @onready var siren = $Siren
 
 @onready var hit_cooldown_timer = $damage_player/Timer
@@ -26,12 +30,15 @@ var chase_deadzone = 30
 var direction = 1
 
 func _ready():
+	start_position = global_position
+	$AnimatedSprite2D.modulate = color
 	if flip_h:
 		$AnimatedSprite2D.flip_h = true
 		direction = -1
 	start_seed = randf()
 	time = start_seed * 1000
 	$Player_Search_Zone.scale.x = chase_radius_scale
+	$PhysicalCollider.disabled = ignore_physical
 	hit_cooldown_timer.wait_time = hit_cooldown
 	hit_cooldown_timer.start()
 
@@ -56,7 +63,7 @@ func hit_enemy():
 	
 func _process(delta):
 	if !dead:
-		if not is_on_floor():
+		if not is_on_floor() and !ignore_physical:
 			var gravity = get_gravity() * delta
 			velocity += gravity
 		
@@ -68,6 +75,8 @@ func _process(delta):
 			if player_in_collision != null:
 				if hit_cooldown_timer.is_stopped():
 					player.hit_player(damage)
+					if player.dead:
+						global_position = start_position
 					hit_cooldown_timer.wait_time = hit_cooldown
 					hit_cooldown_timer.start()
 

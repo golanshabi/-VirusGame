@@ -161,6 +161,8 @@ func kill_player():
 	tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.02)
 
 func hit_player(damage : int):
+	if should_pause:
+		return
 	play_random_hit_sound(player_hit_sound_array)
 	hp -= damage
 	if hp <= 0:
