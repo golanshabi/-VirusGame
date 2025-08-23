@@ -10,10 +10,12 @@ var max_time_limit = 10000000
 
 var is_rolling : bool = false
 var in_roll_animation : bool = false
-var ROLL_COOLDOWN = 7
-var roll_speed = 150
+@export var ROLL_COOLDOWN = 5
+@export var flip_h : bool = false
+@export var roll_speed = 200
 var roll_angular_speed = 0.5
 var direction = 1
+@export var hitmask : Array[String] = [] 
 
 var get_into_roll_animation = "get_into_roll"
 var get_out_of_roll_animation = "get_out_of_roll"
@@ -23,6 +25,9 @@ var damage = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if flip_h:
+		direction *= -1
+		$AnimatedSprite2D.flip_h = true
 	is_rolling = false
 	in_roll_animation = false
 	$AnimatedSprite2D.rotation = 0
@@ -30,6 +35,9 @@ func _ready():
 	$AnimatedSprite2D.play("idle")
 	$PhysicalCollider_circle.disabled = true
 	$PhysicalCollider_pill.disabled = false
+	hitmask.append("TileMap")
+	hitmask.append("TileMap2")
+	hitmask.append("Pill_enemy")
 	randomize()
 	#var start_seed = floor(randf()*3000)
 	#print(start_seed)
@@ -64,12 +72,12 @@ func _physics_process(delta):
 		
 		if in_roll_animation:
 			$hitbox/CollisionShape2D.disabled = true
-			$damage_player/PillCollider.scale.x = 2
+			$damage_player/PillCollider.scale = Vector2(2, 2)
 			velocity.x = roll_speed * direction
 			$AnimatedSprite2D.rotate(roll_angular_speed * direction)
 		else:
 			$hitbox/CollisionShape2D.disabled = false
-			$damage_player/PillCollider.scale.x = 1.0
+			$damage_player/PillCollider.scale = Vector2(1,1)
 		if !is_rolling and roll_timer.is_stopped():
 			roll()
 		move_and_slide()
@@ -110,6 +118,11 @@ func stop_rolling():
 	$PhysicalCollider_pill.disabled = false
 	$AnimatedSprite2D.play("idle")
 
+
+func get_name_without_number(name : String) -> String:
+	return name.substr(0,name.length()-1) if name[name.length()-1].is_valid_int() else name
+
+
 func _on_check_terrain_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if body.name == "TileMap" or body.name == "TileMap2":
+	if hitmask.has(get_name_without_number(body.name)) and body.position != position:
 		stop_rolling()

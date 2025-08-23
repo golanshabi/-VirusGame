@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw8sqymnjj1mt"]
+[gd_scene load_steps=7 format=3 uid="uid://cw8sqymnjj1mt"]
 
 [ext_resource type="Texture2D" uid="uid://dwi3ibjcrf76c" path="res://Assetes/dead 1.png" id="1_g1wvn"]
 [ext_resource type="Texture2D" uid="uid://wpsqc6ts8rc2" path="res://Assetes/dead 2.png" id="2_u4r1m"]
@@ -20,6 +20,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4r1m"]
 size = Vector2(8, 119)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_u4r1m"]
+radius = 23.0217
+
 [sub_resource type="Curve" id="Curve_vby1k"]
 _data = [Vector2(0.015, 0.550562), 0.0, 0.0, 0, 0, Vector2(0.29, 0.932584), 0.0, 0.0, 0, 0, Vector2(0.73, 0.674157), 0.0, 0.0, 0, 0, Vector2(1, 0.988764), 0.0, 0.0, 0, 0]
 point_count = 4
@@ -36,6 +39,10 @@ frame_progress = 0.169308
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -59.5)
 shape = SubResource("RectangleShape2D_u4r1m")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -83)
+shape = SubResource("CircleShape2D_u4r1m")
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 1, 0, -56)
