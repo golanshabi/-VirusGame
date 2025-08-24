@@ -288,11 +288,11 @@ offset_bottom = 44.0
 [node name="Desc1" type="RichTextLabel" parent="Tutorial text"]
 z_index = -3
 layout_mode = 0
-offset_left = -10.0
-offset_top = 770.0
-offset_right = 254.0
-offset_bottom = 888.0
-text = "Although most viruses are friendly, some might not be or even worse... you can run into the immune system and drugs😱"
+offset_left = -7.0
+offset_top = 778.0
+offset_right = 282.0
+offset_bottom = 896.0
+text = "Although most viruses are friendly, some might not be or even worse... you can run into the immune system and medicine😱"
 
 [node name="Desc2" type="RichTextLabel" parent="Tutorial text"]
 z_index = -3
@@ -301,7 +301,7 @@ offset_left = 512.0
 offset_top = 706.0
 offset_right = 776.0
 offset_bottom = 824.0
-text = "The best solution for these matters is to siply bop them on the head affectionately"
+text = "The best solution for these matters is to simply bop them on the head affectionately"
 
 [node name="world_boudary" type="StaticBody2D" parent="."]
 

@@ -131,3 +131,7 @@ z_index = 15
 position = Vector2(2, -1)
 scale = Vector2(2, 2)
 texture = ExtResource("12_5htga")
+
+[node name="AbleToJumpTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true

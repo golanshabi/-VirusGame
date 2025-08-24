@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://kpddc8vkccep" path="res://Assetes/no_highlight_inner_tissue.png" id="7_m677n"]
 [ext_resource type="Texture2D" uid="uid://bdb3l80g4xwy6" path="res://Assetes/background.png" id="9_rfkqk"]
 [ext_resource type="Texture2D" uid="uid://c2ue2xlfcbkso" path="res://Assetes/blood_type_no_highlight.png" id="10_7rpwa"]
-[ext_resource type="PackedScene" uid="uid://dg1i8d733h83j" path="res://Collectible.tscn" id="10_l1oci"]
+[ext_resource type="PackedScene" uid="uid://dg1i8d733h83j" path="res://Collectable/Collectible.tscn" id="10_l1oci"]
 [ext_resource type="Texture2D" uid="uid://b5nhmdwpwqhr5" path="res://Assetes/bloodandmusclev2.png" id="11_m677n"]
 [ext_resource type="PackedScene" uid="uid://dlsywgjylnkgy" path="res://Traps/spike.tscn" id="12_vag3g"]
 [ext_resource type="PackedScene" uid="uid://cw8sqymnjj1mt" path="res://Balloons/balloon.tscn" id="15_m677n"]
