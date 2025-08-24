@@ -84,7 +84,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmr5"]
-size = Vector2(42, 36)
+size = Vector2(42, 34)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdmr5"]
 radius = 11.0
@@ -94,7 +94,7 @@ height = 40.0
 size = Vector2(28, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3p82"]
-size = Vector2(39, 46)
+size = Vector2(37, 46)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qqde3"]
 animations = [{
@@ -133,7 +133,7 @@ autoplay = "default"
 frame_progress = 0.107756
 
 [node name="PhysicalCollider" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_sdmr5")
 
 [node name="PhysicalCollider2" type="CollisionShape2D" parent="."]
@@ -150,7 +150,7 @@ shape = SubResource("RectangleShape2D_1hlju")
 [node name="damage_player" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damage_player"]
-position = Vector2(-3.27835e-07, 4.5)
+position = Vector2(-3.94783e-06, 3.5)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_s3p82")
 

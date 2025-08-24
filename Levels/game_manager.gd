@@ -13,6 +13,7 @@ var level_index = 0
 
 func _ready():
 	menu.visible = false
+	levels.append(preload("res://Levels/final_level.tscn"))
 	levels.append(preload("res://Levels/first_level.tscn"))
 	levels.append(preload("res://Levels/second_level.tscn"))
 	levels.append(preload("res://Levels/third_level.tscn"))
