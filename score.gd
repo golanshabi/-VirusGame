@@ -4,5 +4,6 @@ var local = "SCORE: "
 var global = "TOTAL: "
 
 func _process(delta: float) -> void:
-	var score_text = str(global, str(Globals.total_player_score), "\n", local, str(Globals.player_score))
+	var manager = get_parent().get_parent().get_parent();
+	var score_text = str(global, str(manager.total_player_score), "\n", local, str(manager.player_score))
 	self.text = score_text

@@ -204,16 +204,18 @@ func trans_state():
 		jump_state += 1
 
 func increase_score(added_score, sound):
+	var parent = get_parent()
 	hp = 100 if hp + hp_gain_from_coins > 100 else hp + hp_gain_from_coins
 	update_hp_bar()
-	Globals.player_score += added_score
-	Globals.total_player_score += added_score
+	parent.player_score += added_score
+	parent.total_player_score += added_score
 	audio_player.stream = sound
 	audio_player.play()
-	print(Globals.player_score)
+	print(parent.player_score)
 
 func get_score():
-	return Globals.player_score
+	var parent = get_parent()
+	return parent.player_score
 
 func play_random_hit_sound(array):
 	var random_index = randi() % array.size()
@@ -224,9 +226,10 @@ func play_random_hit_sound(array):
 func respawn(reload_level : bool = false):
 	var parent = get_parent()
 	$CollisionShape2D.disabled = false
-	Globals.total_player_score -= Globals.player_score
-	Globals.player_score = 0
+
 	hp = 100
 	update_hp_bar()
 	if reload_level:
+		parent.total_player_score -= parent.player_score
 		parent.reload_level()
+	parent.player_score = 0
