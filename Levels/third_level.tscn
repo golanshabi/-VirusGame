@@ -411,7 +411,7 @@ position = Vector2(816, 97)
 position = Vector2(848, 97)
 
 [node name="spike25" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(-34, -462)
+position = Vector2(-34, -447)
 rotation = 1.5708
 
 [node name="spike26" parent="Traps" instance=ExtResource("14_kutk5")]
@@ -481,17 +481,24 @@ ROLL_COOLDOWN = 2
 hitmask = Array[String](["pill_enemy"])
 
 [node name="Pill_enemy2" parent="." instance=ExtResource("22_bp7hg")]
-position = Vector2(976, -367)
+position = Vector2(1032, -370)
+ROLL_COOLDOWN = 2
+flip_h = true
+hitmask = Array[String](["pill_enemy"])
+
+[node name="Pill_enemy5" parent="." instance=ExtResource("22_bp7hg")]
+position = Vector2(873, -369)
 ROLL_COOLDOWN = 2
 hitmask = Array[String](["pill_enemy"])
 
 [node name="Pill_enemy3" parent="." instance=ExtResource("22_bp7hg")]
-position = Vector2(850, -369)
+position = Vector2(728, -370)
 ROLL_COOLDOWN = 2
+flip_h = true
 hitmask = Array[String](["pill_enemy"])
 
 [node name="Pill_enemy4" parent="." instance=ExtResource("22_bp7hg")]
-position = Vector2(687, -365)
+position = Vector2(550, -373)
 ROLL_COOLDOWN = 2
 hitmask = Array[String](["pill_enemy"])
 
