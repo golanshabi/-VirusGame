@@ -15,7 +15,7 @@ var max_time_limit = 10000000
 @export var hit_cooldown : float = 1
 @export var ignore_physical : bool = false
 @export var respawn_on_death = false
-@export var color : Color = Color(255,255,255)
+@export var color : Color = Color(1.0, 1.0, 1.0, 1.0)
 
 var start_position
 @onready var siren = $Siren
