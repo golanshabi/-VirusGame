@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cetgiwh6gv250"]
+[gd_scene load_steps=8 format=3 uid="uid://cetgiwh6gv250"]
 
 [ext_resource type="Script" uid="uid://62vn2skadmni" path="res://Levels/game_manager.gd" id="1_8mm7a"]
 [ext_resource type="Script" uid="uid://b4ebt4sy6ewiq" path="res://score.gd" id="2_gyfs4"]
 [ext_resource type="AudioStream" uid="uid://d4isuu02op2a2" path="res://Assetes/Music/bg_track_virus.wav" id="2_nfk4m"]
 [ext_resource type="PackedScene" uid="uid://chvpvqcqpc6p4" path="res://Menu/menu.tscn" id="3_d5x1h"]
 [ext_resource type="PackedScene" uid="uid://dwqqfutaiwk2y" path="res://Player/player.tscn" id="5_hq1ik"]
+[ext_resource type="PackedScene" uid="uid://ngja1h2vxima" path="res://Balloon_projectile/win.tscn" id="6_72q2g"]
 
 [sub_resource type="Gradient" id="Gradient_nfk4m"]
 colors = PackedColorArray(1, 0, 0, 0.807843, 1, 0, 0, 0.517647)
@@ -110,3 +111,6 @@ panning_strength = 0.0
 bus = &"Music"
 
 [node name="LevelsContainer" type="Node2D" parent="."]
+
+[node name="Win_screen" parent="." instance=ExtResource("6_72q2g")]
+visible = false

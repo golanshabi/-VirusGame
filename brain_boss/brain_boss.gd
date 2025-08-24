@@ -75,4 +75,4 @@ func hit():
 		await tween_fade.finished
 		get_node(".").queue_free()
 		
-		print("win")
+		get_node("/root/main_scene").win()

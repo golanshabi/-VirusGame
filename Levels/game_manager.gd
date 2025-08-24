@@ -4,6 +4,8 @@ extends Node2D
 @onready var menu = get_node("/root/main_scene/canvas/Menu")
 @onready var levels_container = $LevelsContainer
 
+@onready var winscreen = $Win_screen
+
 var player_score = 0
 var total_player_score = 0
 
@@ -13,11 +15,11 @@ var level_index = 0
 
 func _ready():
 	menu.visible = false
-	levels.append(preload("res://Levels/final_level.tscn"))
 	levels.append(preload("res://Levels/first_level.tscn"))
 	levels.append(preload("res://Levels/second_level.tscn"))
 	levels.append(preload("res://Levels/third_level.tscn"))
 	levels.append(preload("res://Levels/4_th_level.tscn"))
+	levels.append(preload("res://Levels/final_level.tscn"))
 
 	progress_level()
 
@@ -49,3 +51,7 @@ func reload_level():
 		levels_container.get_child(0).queue_free()
 	var lvl = levels[level_index - 1].instantiate()
 	levels_container.add_child(lvl)
+	
+func win():
+	player.should_pause = true
+	winscreen.visible = true
