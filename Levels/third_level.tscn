@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://by5h4lypt0yos" path="res://Virus_enemy/virus_enemy.tscn" id="15_0arrs"]
 [ext_resource type="PackedScene" uid="uid://dmqdct0nyaq3b" path="res://White_blood_cell_enemy/white_blood_cell_enemy.tscn" id="17_l5yr5"]
 [ext_resource type="PackedScene" uid="uid://cefgpbcc3he2x" path="res://Traps/BreakingSlab.tscn" id="18_el84j"]
-[ext_resource type="Script" uid="uid://bkty40vwuou8k" path="res://Levels/node_2d.gd" id="19_1g5uh"]
+[ext_resource type="Script" path="res://Levels/node_2d.gd" id="19_1g5uh"]
 [ext_resource type="PackedScene" uid="uid://ji53ssohqski" path="res://Turret/turret.tscn" id="19_ncywn"]
 [ext_resource type="PackedScene" uid="uid://bmxw6180wlfwq" path="res://trigger_slab.tscn" id="21_coicp"]
 [ext_resource type="PackedScene" uid="uid://xfdcvae00px6" path="res://Pill_enemy/pill_enemy.tscn" id="22_bp7hg"]
@@ -339,102 +339,102 @@ position = Vector2(1072, -367)
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="spike" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(367, 68)
+position = Vector2(367, 97)
 
 [node name="spike2" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(399, 68)
+position = Vector2(399, 97)
 
 [node name="spike3" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(431, 68)
+position = Vector2(431, 97)
 
 [node name="spike4" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(463, 68)
+position = Vector2(463, 97)
 
 [node name="spike5" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(495, 68)
+position = Vector2(495, 97)
 
 [node name="spike6" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(527, 68)
+position = Vector2(527, 97)
 
 [node name="spike7" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(559, 68)
+position = Vector2(559, 97)
 
 [node name="spike8" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(591, 68)
+position = Vector2(591, 97)
 
 [node name="spike9" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(623, 68)
+position = Vector2(623, 97)
 
 [node name="spike10" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(655, 68)
+position = Vector2(655, 97)
 
 [node name="spike11" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(687, 68)
+position = Vector2(687, 97)
 
 [node name="spike12" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(719, 68)
+position = Vector2(719, 97)
 
 [node name="spike13" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(751, 68)
+position = Vector2(751, 97)
 
 [node name="spike14" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(239, 68)
+position = Vector2(239, 97)
 
 [node name="spike15" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(271, 68)
+position = Vector2(271, 97)
 
 [node name="spike16" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(303, 68)
+position = Vector2(303, 97)
 
 [node name="spike17" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(335, 68)
+position = Vector2(335, 97)
 
 [node name="spike18" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(111, 68)
+position = Vector2(111, 97)
 
 [node name="spike19" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(143, 68)
+position = Vector2(143, 97)
 
 [node name="spike20" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(175, 68)
+position = Vector2(175, 97)
 
 [node name="spike21" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(207, 68)
+position = Vector2(207, 97)
 
 [node name="spike22" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(784, 68)
+position = Vector2(784, 97)
 
 [node name="spike23" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(816, 68)
+position = Vector2(816, 97)
 
 [node name="spike24" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(848, 68)
+position = Vector2(848, 97)
 
 [node name="spike25" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(-7, -434)
+position = Vector2(-34, -462)
 rotation = 1.5708
 
 [node name="spike26" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(4, -494)
+position = Vector2(33, -495)
 rotation = 4.71239
 
 [node name="spike27" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(176, -476)
+position = Vector2(176, -447)
 
 [node name="spike28" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(208, -476)
+position = Vector2(208, -447)
 
 [node name="spike29" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(240, -476)
+position = Vector2(240, -447)
 
 [node name="spike30" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(272, -476)
+position = Vector2(272, -447)
 
 [node name="spike31" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(304, -476)
+position = Vector2(304, -447)
 
 [node name="spike32" parent="Traps" instance=ExtResource("14_kutk5")]
-position = Vector2(336, -476)
+position = Vector2(336, -447)
 
 [node name="Virus_enemy" parent="." instance=ExtResource("15_0arrs")]
 position = Vector2(368, 26)
@@ -470,7 +470,7 @@ position = Vector2(-18, -349)
 position = Vector2(23, -522)
 
 [node name="Collectible4" parent="." instance=ExtResource("12_oruas")]
-position = Vector2(258, -475)
+position = Vector2(258, -482)
 
 [node name="Collectible5" parent="." instance=ExtResource("12_oruas")]
 position = Vector2(771, -363)

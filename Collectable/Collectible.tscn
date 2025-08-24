@@ -27,6 +27,7 @@ script = ExtResource("1_svjgs")
 shape = SubResource("CircleShape2D_hcdtm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
 sprite_frames = SubResource("SpriteFrames_xt3mo")
 autoplay = "default"
 
