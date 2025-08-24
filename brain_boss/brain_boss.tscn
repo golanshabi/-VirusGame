@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://jlqusp3wi7yo"]
+[gd_scene load_steps=4 format=3 uid="uid://jlqusp3wi7yo"]
 
+[ext_resource type="Script" uid="uid://bbtpda0upxu5w" path="res://brain_boss/brain_boss.gd" id="1_22m3g"]
 [ext_resource type="Texture2D" uid="uid://4dtv5rn34f28" path="res://Assetes/brain_t1.png" id="1_38ptm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_38ptm"]
 radius = 27.0
 height = 90.0
 
-[node name="brain_boss" type="CharacterBody2D"]
+[node name="Brain_boss" type="CharacterBody2D"]
+script = ExtResource("1_22m3g")
 
 [node name="sprite" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)

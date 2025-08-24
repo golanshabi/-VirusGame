@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://dskypcwn66sih"]
+[gd_scene load_steps=2 format=3 uid="uid://dskypcwn66sih"]
+
+[ext_resource type="Script" uid="uid://ba2f08rp2thmp" path="res://Balloon_projectile/balloon_spawner.gd" id="1_l4mm5"]
 
 [node name="Balloon_spawner" type="Node2D"]
+script = ExtResource("1_l4mm5")
+
+[node name="respawn_timer" type="Timer" parent="."]
+one_shot = true
