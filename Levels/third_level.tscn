@@ -331,7 +331,7 @@ offset_bottom = 605.0
 text = "Your clone can also stop bullets!"
 
 [node name="SpawnPoint" type="Node2D" parent="."]
-position = Vector2(627, -205)
+position = Vector2(-3, 76)
 
 [node name="Balloon" parent="." instance=ExtResource("13_q1ivm")]
 position = Vector2(1072, -367)
