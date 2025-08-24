@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ifwsf1fymy1s"]
+[gd_scene load_steps=29 format=3 uid="uid://ifwsf1fymy1s"]
 
 [ext_resource type="Texture2D" uid="uid://8mbbbhf0ya5s" path="res://Assetes/tileset_1.png" id="1_44p27"]
 [ext_resource type="Script" uid="uid://1erbdbsavoei" path="res://Levels/level.gd" id="1_enfa2"]
@@ -255,14 +255,6 @@ sources/2 = SubResource("TileSetAtlasSource_q44rd")
 sources/8 = SubResource("TileSetAtlasSource_b3k83")
 sources/9 = SubResource("TileSetAtlasSource_dyuux")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gtnjh"]
-normal = Vector2(-1, 0)
-distance = -860.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p0bkc"]
-normal = Vector2(1, 0)
-distance = -191.0
-
 [node name="Second_level" type="Node2D"]
 script = ExtResource("1_enfa2")
 
@@ -302,15 +294,6 @@ offset_top = 706.0
 offset_right = 776.0
 offset_bottom = 824.0
 text = "The best solution for these matters is to simply bop them on the head affectionately"
-
-[node name="world_boudary" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world_boudary"]
-position = Vector2(518, -4)
-shape = SubResource("WorldBoundaryShape2D_gtnjh")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="world_boudary"]
-shape = SubResource("WorldBoundaryShape2D_p0bkc")
 
 [node name="Collectibles" type="Node" parent="."]
 
