@@ -1,7 +1,7 @@
 extends Node2D
 var bullet = preload("res://Turret/bullet.tscn")
 @onready var cooldown_timer = $"../CoolDownTimer"
-const TIME_PER_SHOT = 0.75
+const TIME_PER_SHOT = 1
 var stop = false
 
 func _process(delta: float) -> void:
