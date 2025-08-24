@@ -286,6 +286,15 @@ offset_right = 282.0
 offset_bottom = 896.0
 text = "Although most viruses are friendly, some might not be or even worse... you can run into the immune system and medicine😱"
 
+[node name="Desc3" type="RichTextLabel" parent="Tutorial text"]
+z_index = -3
+layout_mode = 0
+offset_left = 660.0
+offset_top = 589.0
+offset_right = 949.0
+offset_bottom = 639.0
+text = "If you can't find the balloon, try looking harder!"
+
 [node name="Desc2" type="RichTextLabel" parent="Tutorial text"]
 z_index = -3
 layout_mode = 0
