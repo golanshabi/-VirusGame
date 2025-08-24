@@ -63,10 +63,13 @@ show_percentage = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.947598
+anchor_top = -0.131455
 anchor_right = 1.05066
+anchor_bottom = 0.0250391
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
+tab_size = 7
 script = ExtResource("2_gyfs4")
 metadata/_edit_use_anchors_ = true
 

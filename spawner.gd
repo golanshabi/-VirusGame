@@ -6,7 +6,6 @@ var stop = false
 func _process(delta: float) -> void:
 	if cooldown_timer.is_stopped() && not stop:
 		cooldown_timer.wait_time = get_parent().TIME_PER_SHOT
-		print(get_parent().TIME_PER_SHOT)
 		cooldown_timer.start()
 		var bullet_instance = bullet.instantiate()
 		get_parent().add_child(bullet_instance)

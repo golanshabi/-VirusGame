@@ -35,3 +35,9 @@ func progress_level():
 		player.respawn()
 		levels_container.add_child(lvl)
 		level_index += 1
+
+func reload_level():
+	if levels_container.get_child(0):
+		levels_container.get_child(0).queue_free()
+	var lvl = levels[level_index - 1].instantiate()
+	levels_container.add_child(lvl)

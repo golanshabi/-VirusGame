@@ -22,7 +22,7 @@ func respawn_player():
 	await get_tree().create_timer(player.respawn_time).timeout
 	player.position = spawn_point.position
 	await get_tree().create_timer(0.1).timeout
-	player.respawn()
+	player.respawn(true)
 	player.should_pause = false
 	player.dead = false
 	should_respawn = true

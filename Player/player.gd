@@ -20,6 +20,7 @@ var hp_gain_from_coins = 10
 
 
 @onready var audio_player = $AudioStreamPlayer2D
+@onready var Camera = $Camera2D
 @onready var HUD = get_node("/root/main_scene/canvas/HUD")
 @onready var HP_bar = get_node("/root/main_scene/canvas/HUD/HP_bar")
 @onready var Dash_cd_bar = get_node("/root/main_scene/canvas/HUD/Dash_cd")
@@ -206,6 +207,7 @@ func increase_score(added_score, sound):
 	hp = 100 if hp + hp_gain_from_coins > 100 else hp + hp_gain_from_coins
 	update_hp_bar()
 	Globals.player_score += added_score
+	Globals.total_player_score += added_score
 	audio_player.stream = sound
 	audio_player.play()
 	print(Globals.player_score)
@@ -219,7 +221,12 @@ func play_random_hit_sound(array):
 	audio_player.play()
 
 
-func respawn():
+func respawn(reload_level : bool = false):
+	var parent = get_parent()
 	$CollisionShape2D.disabled = false
+	Globals.total_player_score -= Globals.player_score
+	Globals.player_score = 0
 	hp = 100
 	update_hp_bar()
+	if reload_level:
+		parent.reload_level()

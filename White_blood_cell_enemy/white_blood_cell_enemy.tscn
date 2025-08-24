@@ -152,7 +152,6 @@ shape = SubResource("RectangleShape2D_1hlju")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damage_player"]
 position = Vector2(-3.27835e-07, 4.5)
 rotation = -1.5708
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_s3p82")
 
 [node name="Timer" type="Timer" parent="damage_player"]
