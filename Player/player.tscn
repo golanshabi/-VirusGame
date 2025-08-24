@@ -7,7 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://2ytejm0ogp6" path="res://Assetes/dead 4.png" id="5_ivps1"]
 [ext_resource type="PackedScene" uid="uid://bp8r0t7b02xg0" path="res://Player/PlayerAbilities/dash/dash.tscn" id="5_sweqy"]
 [ext_resource type="Texture2D" uid="uid://bjpfnsyt6vt5t" path="res://Assetes/dead 5.png" id="6_urp6f"]
+[ext_resource type="Texture2D" uid="uid://dumdvvg5umlk7" path="res://Assetes/sprites/PlayerSprites/main_idle.webp" id="7_dkpta"]
+[ext_resource type="Texture2D" uid="uid://xcayowgjwq5v" path="res://Assetes/sprites/PlayerSprites/main_idle_2.png" id="8_lfmf2"]
 [ext_resource type="PackedScene" uid="uid://bxktvj86vfu1r" path="res://Player/PlayerAbilities/clone/cloner.tscn" id="9_b26j0"]
+[ext_resource type="Texture2D" uid="uid://cmflg6x250llk" path="res://Assetes/sprites/PlayerSprites/main_idle_3.webp" id="9_pisgm"]
 [ext_resource type="Texture2D" uid="uid://bra7ebt07f5gp" path="res://Assetes/copy_idle_1.png" id="10_n7ghd"]
 [ext_resource type="PackedScene" uid="uid://cesr32p3lk6st" path="res://Player/PlayerAbilities/hit_effect.tscn" id="10_nvl01"]
 [ext_resource type="PackedScene" uid="uid://cdg41e02o8hhr" path="res://Player/PlayerAbilities/dash_effect.tscn" id="11_nvl01"]
@@ -15,15 +18,6 @@
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqtel"]
 load_path = "res://.godot/imported/dash1.webp-27e29935b2a957ba7cc7222b0d86ad72.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sweqy"]
-load_path = "res://.godot/imported/main_idle_2.png-304cde4bf416b0ea3b14ec7dee70e6d4.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2hs0m"]
-load_path = "res://.godot/imported/main_idle.webp-60ea3a1f53a01d5d7d651b2426ca8d48.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1jxqw"]
-load_path = "res://.godot/imported/main_idle_3.webp-f6805acbecb0cce26df9d910d847a791.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dw050"]
 load_path = "res://.godot/imported/move_1.webp-7a320dfa5fbc691c9380843338b99b0c.ctex"
@@ -63,16 +57,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_sweqy")
+"texture": ExtResource("7_dkpta")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_2hs0m")
+"texture": ExtResource("8_lfmf2")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_sweqy")
+"texture": ExtResource("9_pisgm")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_1jxqw")
+"texture": ExtResource("8_lfmf2")
 }],
 "loop": true,
 "name": &"idle",
@@ -99,10 +93,8 @@ script = ExtResource("1_onrkg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_1jxqw")
-animation = &"death"
+animation = &"idle"
 autoplay = "idle"
-frame = 4
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

@@ -120,7 +120,6 @@ animations = [{
 script = ExtResource("1_1hlju")
 
 [node name="Player_Search_Zone" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Search_Zone"]
 position = Vector2(-1, -43)

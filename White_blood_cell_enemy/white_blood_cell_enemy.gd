@@ -16,6 +16,7 @@ var max_time_limit = 10000000
 @export var ignore_physical : bool = false
 @export var respawn_on_death = false
 @export var color : Color = Color(1.0, 1.0, 1.0, 1.0)
+@export var vertical_chase : bool = false
 
 var start_position
 @onready var siren = $Siren
@@ -28,6 +29,7 @@ var player = null
 var chasing : bool = false
 var chase_deadzone = 30
 var direction = 1
+var v_direction = 1
 
 func _ready():
 	start_position = global_position
@@ -93,9 +95,16 @@ func _process(delta):
 				$AnimatedSprite2D.flip_h = true
 				direction = -1
 			velocity.x = chase_speed * direction
+			if vertical_chase:
+				if global_position.y < player.global_position.y - chase_deadzone:
+					v_direction = 1
+				elif global_position.y > player.global_position.y + chase_deadzone:
+					v_direction = -1
+				velocity.y = chase_speed * v_direction
 		else:
 			siren.visible = false
 			velocity.x = 0
+			velocity.y = 0
 		move_and_slide()
 	else:
 		$AudioStreamPlayer2D.playing = false

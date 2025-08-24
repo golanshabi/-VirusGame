@@ -8,6 +8,8 @@ radius = 27.0
 height = 90.0
 
 [node name="Brain_boss" type="CharacterBody2D"]
+disable_mode = 1
+motion_mode = 1
 script = ExtResource("1_22m3g")
 
 [node name="sprite" type="Sprite2D" parent="."]
@@ -19,3 +21,10 @@ position = Vector2(-3, -2)
 rotation = -1.5708
 scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_38ptm")
+
+[node name="Enemy_spawn_timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Spawn_point" type="Node2D" parent="."]
+position = Vector2(-10, 125)
