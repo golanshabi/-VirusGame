@@ -35,6 +35,7 @@ var knockback_force : float = 0.0
 var max_knockback_force : float = 400
 var knockback_divider = 10
 var is_in_knockback : bool = false
+var respawn_time = 1
 
 var dead : bool = false
 
@@ -65,13 +66,16 @@ func _ready():
 	enemy_hit_sound_array.append(preload("res://Assetes/Music/enemy_hit_2.wav"))
 	
 	HP_bar.max_value = hp
-	HP_bar.value = hp
+	update_hp_bar()
 	
 	Dash_cd_bar.max_value = DASH_COOLDOWN_SEC
 	Dash_cd_bar.value = DASH_COOLDOWN_SEC
 	
 	Clone_cd_bar.max_value = CLONE_COOLDOWN
 	Clone_cd_bar.value = CLONE_COOLDOWN
+
+func update_hp_bar():
+	HP_bar.value = hp
 
 func _physics_process(delta: float) -> void:
 	if dead:
@@ -172,7 +176,7 @@ func kill_player():
 	$CollisionShape2D.disabled = true
 	var tween_fade = get_tree().create_tween()
 	tween_fade = get_tree().create_tween()
-	tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
+	tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), respawn_time)
 	await tween_fade.finished
 	tween_fade = get_tree().create_tween()
 	tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.02)
@@ -192,7 +196,7 @@ func hit_player(damage : int):
 		await tween_fade.finished
 		tween_fade = get_tree().create_tween()
 		tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.05)
-	HP_bar.value = hp
+	update_hp_bar()
 
 func trans_state():
 	if jump_state == JumpState.TRANS_FLOOR || jump_state == JumpState.TRANS_JUMP:
@@ -200,7 +204,7 @@ func trans_state():
 
 func increase_score(added_score, sound):
 	hp = 100 if hp + hp_gain_from_coins > 100 else hp + hp_gain_from_coins
-	HP_bar.value = hp
+	update_hp_bar()
 	Globals.player_score += added_score
 	audio_player.stream = sound
 	audio_player.play()
@@ -218,4 +222,4 @@ func play_random_hit_sound(array):
 func respawn():
 	$CollisionShape2D.disabled = false
 	hp = 100
-	HP_bar.value = hp
+	update_hp_bar()

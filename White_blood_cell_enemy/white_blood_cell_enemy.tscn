@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dmqdct0nyaq3b"]
+[gd_scene load_steps=27 format=3 uid="uid://dmqdct0nyaq3b"]
 
 [ext_resource type="Script" uid="uid://coy7fvij2yr3n" path="res://White_blood_cell_enemy/white_blood_cell_enemy.gd" id="1_1hlju"]
 [ext_resource type="Texture2D" uid="uid://c2rvd0ilvmtko" path="res://Assetes/enemy_idle_1.png" id="1_or6mf"]
@@ -84,14 +84,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmr5"]
-size = Vector2(42, 37)
+size = Vector2(42, 36)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdmr5"]
+radius = 11.0
+height = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1hlju"]
 size = Vector2(28, 8)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7xds7"]
-radius = 21.0173
-height = 48.033
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3p82"]
+size = Vector2(39, 46)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qqde3"]
 animations = [{
@@ -130,8 +133,13 @@ autoplay = "default"
 frame_progress = 0.107756
 
 [node name="PhysicalCollider" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3.5)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_sdmr5")
+
+[node name="PhysicalCollider2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_sdmr5")
 
 [node name="hit_box" type="Area2D" parent="."]
 
@@ -142,9 +150,10 @@ shape = SubResource("RectangleShape2D_1hlju")
 [node name="damage_player" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damage_player"]
-position = Vector2(9.3137e-09, 4)
-rotation = -1.54808
-shape = SubResource("CapsuleShape2D_7xds7")
+position = Vector2(-3.27835e-07, 4.5)
+rotation = -1.5708
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_s3p82")
 
 [node name="Timer" type="Timer" parent="damage_player"]
 wait_time = 0.3

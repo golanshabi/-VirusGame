@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://by5h4lypt0yos" path="res://Virus_enemy/virus_enemy.tscn" id="15_0arrs"]
 [ext_resource type="PackedScene" uid="uid://dmqdct0nyaq3b" path="res://White_blood_cell_enemy/white_blood_cell_enemy.tscn" id="17_l5yr5"]
 [ext_resource type="PackedScene" uid="uid://cefgpbcc3he2x" path="res://Traps/BreakingSlab.tscn" id="18_el84j"]
-[ext_resource type="Script" uid="uid://bkty40vwuou8k" path="res://Levels/node_2d.gd" id="19_1g5uh"]
+[ext_resource type="Script" path="res://Levels/node_2d.gd" id="19_1g5uh"]
 [ext_resource type="PackedScene" uid="uid://ji53ssohqski" path="res://Turret/turret.tscn" id="19_ncywn"]
 [ext_resource type="PackedScene" uid="uid://bmxw6180wlfwq" path="res://trigger_slab.tscn" id="21_coicp"]
 [ext_resource type="PackedScene" uid="uid://xfdcvae00px6" path="res://Pill_enemy/pill_enemy.tscn" id="22_bp7hg"]
@@ -331,7 +331,7 @@ offset_bottom = 605.0
 text = "Your clone can also stop bullets!"
 
 [node name="SpawnPoint" type="Node2D" parent="."]
-position = Vector2(430, -495)
+position = Vector2(627, -205)
 
 [node name="Balloon" parent="." instance=ExtResource("13_q1ivm")]
 position = Vector2(1072, -367)
@@ -453,7 +453,6 @@ position = Vector2(-16, -272)
 
 [node name="Turret2" parent="." instance=ExtResource("19_ncywn")]
 position = Vector2(460, -366)
-TIME_PER_SHOT = 0.5
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(-157, 29)

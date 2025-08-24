@@ -40,6 +40,9 @@ func _ready():
 	time = start_seed * 1000
 	$Player_Search_Zone.scale.x = chase_radius_scale
 	$PhysicalCollider.disabled = ignore_physical
+	$PhysicalCollider2.disabled = ignore_physical
+	if ignore_physical:
+		$damage_player/CollisionShape2D.scale.x *= 1.6
 	hit_cooldown_timer.wait_time = hit_cooldown
 	hit_cooldown_timer.start()
 
@@ -56,6 +59,7 @@ func hit_enemy():
 	if hp <= 0:
 		dead = true
 		$PhysicalCollider.disabled = true
+		$PhysicalCollider2.disabled = true
 		var tween_fade = get_tree().create_tween()
 		tween_fade.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
 		$AnimatedSprite2D.play("death")

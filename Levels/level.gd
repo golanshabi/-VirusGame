@@ -18,10 +18,12 @@ func _process(delta):
 
 func respawn_player():
 	should_respawn = false
-	await get_tree().create_timer(1).timeout
+	player.should_pause = true
+	await get_tree().create_timer(player.respawn_time).timeout
 	player.position = spawn_point.position
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.1).timeout
 	player.respawn()
+	player.should_pause = false
 	player.dead = false
 	should_respawn = true
 

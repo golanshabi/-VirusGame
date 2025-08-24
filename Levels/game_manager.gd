@@ -10,8 +10,8 @@ var level_index = 0
 
 func _ready():
 	menu.visible = false
-	levels.append(preload("res://Levels/third_level.tscn"))
 	levels.append(preload("res://Levels/4_th_level.tscn"))
+	levels.append(preload("res://Levels/third_level.tscn"))
 	levels.append(preload("res://Levels/second_level.tscn"))
 	levels.append(preload("res://Levels/first_level.tscn"))
 	
@@ -32,5 +32,6 @@ func progress_level():
 		if levels_container.get_child(0):
 			levels_container.get_child(0).queue_free()
 		var lvl = levels[level_index].instantiate()
+		player.respawn()
 		levels_container.add_child(lvl)
 		level_index += 1
