@@ -300,10 +300,10 @@ position = Vector2(919, 144)
 position = Vector2(1435, 144)
 
 [node name="Collectible4" parent="Collectibles" instance=ExtResource("13_dkmo4")]
-position = Vector2(2626, -133)
+position = Vector2(2706, -147)
 
 [node name="SpawnPoint" type="Node2D" parent="."]
-position = Vector2(-717, 201)
+position = Vector2(-709, 214)
 
 [node name="Balloon" parent="." instance=ExtResource("14_jiv6x")]
 position = Vector2(2984, 223)
