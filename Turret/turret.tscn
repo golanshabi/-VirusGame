@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ji53ssohqski"]
+[gd_scene load_steps=4 format=3 uid="uid://ji53ssohqski"]
 
 [ext_resource type="Texture2D" uid="uid://cjigyyrwkun28" path="res://Turret/turret.webp" id="1_tjdg3"]
+[ext_resource type="Script" uid="uid://2k8b6fr1hh5r" path="res://Turret/turret.gd" id="1_ttsi1"]
 [ext_resource type="Script" uid="uid://cjqqfeuil40tw" path="res://spawner.gd" id="2_c5apd"]
 
 [node name="Turret" type="Node2D"]
+script = ExtResource("1_ttsi1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_tjdg3")
