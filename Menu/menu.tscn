@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://chvpvqcqpc6p4"]
+[gd_scene load_steps=5 format=3 uid="uid://chvpvqcqpc6p4"]
 
 [ext_resource type="Script" uid="uid://cwd0o8ecxvkbw" path="res://Menu/menu.gd" id="1_rwxi6"]
 [ext_resource type="Texture2D" uid="uid://bdb3l80g4xwy6" path="res://Assetes/background.png" id="2_ihied"]
+[ext_resource type="Script" uid="uid://ctnjdt20cb1dc" path="res://Menu/particle_enable.gd" id="3_8w4re"]
+[ext_resource type="Script" uid="uid://db34tvs0p0nqh" path="res://Menu/volume_slider.gd" id="3_raj00"]
 
 [node name="Menu" type="Control"]
 z_index = 10
@@ -40,17 +42,57 @@ text = "Resume
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 z_index = 10
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 98
 
 [node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 button_pressed = true
 text = "Enable Particles
 "
+script = ExtResource("3_8w4re")
 
-[node name="Master_volume_slider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="Master_volume_slider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 max_value = 1.0
 step = 0.001
+script = ExtResource("3_raj00")
+bus_name = "Master"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="Music_volume_slider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_raj00")
+bus_name = "Music"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Effects Volume"
+
+[node name="Effects_volume_slider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_raj00")
+bus_name = "Effects"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 z_index = 10
@@ -59,4 +101,6 @@ text = "Quit
 "
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_start_button_pressed"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckBox" to="VBoxContainer/HBoxContainer/CheckBox" method="_on_toggled"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

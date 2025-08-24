@@ -72,7 +72,7 @@ func _process(delta):
 		if(time > max_time_limit):
 			time = start_seed
 		position.y += sin(time) * mag
-		if chasing and player != null:
+		if chasing and player != null and !player.should_pause:
 			if player_in_collision != null:
 				if hit_cooldown_timer.is_stopped():
 					player.hit_player(damage)

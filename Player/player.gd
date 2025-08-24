@@ -26,7 +26,7 @@ var hp_gain_from_coins = 10
 @onready var Clone_cd_bar = get_node("/root/main_scene/canvas/HUD/Clone_cd")
 @onready var finish_level_mask = $Finish_level_mask
 @onready var able_to_jump_timer = $AbleToJumpTimer
-var jump_ledge_timer = 0.3
+var jump_ledge_timer = 0.15
 
 var enemy_hit_sound_array = []
 var player_hit_sound_array = []

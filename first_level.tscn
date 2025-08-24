@@ -336,11 +336,11 @@ text = "Use SHIFT to dash, it helps cover longer jump distances"
 
 [node name="Desc4" type="RichTextLabel" parent="Tutorial text"]
 layout_mode = 0
-offset_left = 542.0
-offset_top = 445.0
-offset_right = 793.0
-offset_bottom = 522.0
-text = "Clicking the LEFT MOUSE BUTTON will create a clone that can act as a temporary platform
+offset_left = 553.0
+offset_top = 450.0
+offset_right = 804.0
+offset_bottom = 544.0
+text = "Clicking the LEFT MOUSE BUTTON or pressing Q will create a clone that can act as a temporary platform
 "
 
 [node name="SpawnPoint" type="Node2D" parent="."]
