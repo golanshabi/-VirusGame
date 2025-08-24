@@ -302,7 +302,8 @@ offset_left = 512.0
 offset_top = 706.0
 offset_right = 776.0
 offset_bottom = 824.0
-text = "The best solution for these matters is to simply bop them on the head affectionately"
+text = "The best solution for these matters is to simply bop them on the head affectionately.
+If you hold jump you'll bounce higher!"
 
 [node name="Collectibles" type="Node" parent="."]
 
