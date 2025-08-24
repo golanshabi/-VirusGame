@@ -1,11 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://jlqusp3wi7yo"]
+[gd_scene load_steps=3 format=3 uid="uid://jlqusp3wi7yo"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_d3qu5"]
+[ext_resource type="Texture2D" uid="uid://4dtv5rn34f28" path="res://Assetes/brain_t1.png" id="1_38ptm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_38ptm"]
+radius = 27.0
+height = 90.0
 
 [node name="brain_boss" type="CharacterBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_38ptm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_d3qu5")
-frame_progress = 0.848704
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -2)
+rotation = -1.5708
+scale = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_38ptm")

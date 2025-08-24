@@ -39,6 +39,10 @@ func progress_level():
 		player.respawn()
 		levels_container.add_child(lvl)
 		level_index += 1
+		if  levels_container.get_child(0).name == "Final_level":
+			$Player/Camera2D.zoom = Vector2(1.6, 1.6)
+		else:
+			$Player/Camera2D.zoom = Vector2(2.2, 2.2)
 
 func reload_level():
 	if levels_container.get_child(0):
