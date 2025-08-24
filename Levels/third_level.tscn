@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c14jyabpumvqt"]
+[gd_scene load_steps=36 format=3 uid="uid://c14jyabpumvqt"]
 
 [ext_resource type="Script" uid="uid://1erbdbsavoei" path="res://Levels/level.gd" id="1_0aq8j"]
 [ext_resource type="Texture2D" uid="uid://8mbbbhf0ya5s" path="res://Assetes/tileset_1.png" id="1_vh6o8"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://bkty40vwuou8k" path="res://Levels/node_2d.gd" id="19_1g5uh"]
 [ext_resource type="PackedScene" uid="uid://ji53ssohqski" path="res://Turret/turret.tscn" id="19_ncywn"]
 [ext_resource type="PackedScene" uid="uid://bmxw6180wlfwq" path="res://trigger_slab.tscn" id="21_coicp"]
+[ext_resource type="PackedScene" uid="uid://xfdcvae00px6" path="res://Pill_enemy/pill_enemy.tscn" id="22_bp7hg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5yr5"]
 texture = ExtResource("1_vh6o8")
@@ -320,11 +321,20 @@ offset_bottom = 854.0
 text = "Sometimes you can't create enough clones, so you need to use the viruses instead.
 but be careful, not all platforms are strong enough for you."
 
+[node name="Desc2" type="RichTextLabel" parent="Tutorial text"]
+z_index = -3
+layout_mode = 0
+offset_left = -596.0
+offset_top = 487.0
+offset_right = -397.0
+offset_bottom = 605.0
+text = "Your clone can also stop bullets!"
+
 [node name="SpawnPoint" type="Node2D" parent="."]
-position = Vector2(688, -301)
+position = Vector2(430, -495)
 
 [node name="Balloon" parent="." instance=ExtResource("13_q1ivm")]
-position = Vector2(982, -370)
+position = Vector2(1072, -367)
 
 [node name="Traps" type="Node2D" parent="."]
 
@@ -441,6 +451,10 @@ position = Vector2(368, 34)
 [node name="Turret" parent="." instance=ExtResource("19_ncywn")]
 position = Vector2(-16, -272)
 
+[node name="Turret2" parent="." instance=ExtResource("19_ncywn")]
+position = Vector2(460, -366)
+TIME_PER_SHOT = 0.5
+
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(-157, 29)
 script = ExtResource("19_1g5uh")
@@ -458,5 +472,28 @@ position = Vector2(23, -522)
 
 [node name="Collectible4" parent="." instance=ExtResource("12_oruas")]
 position = Vector2(258, -475)
+
+[node name="Collectible5" parent="." instance=ExtResource("12_oruas")]
+position = Vector2(771, -363)
+
+[node name="Pill_enemy" parent="." instance=ExtResource("22_bp7hg")]
+position = Vector2(464, -368)
+ROLL_COOLDOWN = 2
+hitmask = Array[String](["pill_enemy"])
+
+[node name="Pill_enemy2" parent="." instance=ExtResource("22_bp7hg")]
+position = Vector2(976, -367)
+ROLL_COOLDOWN = 2
+hitmask = Array[String](["pill_enemy"])
+
+[node name="Pill_enemy3" parent="." instance=ExtResource("22_bp7hg")]
+position = Vector2(850, -369)
+ROLL_COOLDOWN = 2
+hitmask = Array[String](["pill_enemy"])
+
+[node name="Pill_enemy4" parent="." instance=ExtResource("22_bp7hg")]
+position = Vector2(687, -365)
+ROLL_COOLDOWN = 2
+hitmask = Array[String](["pill_enemy"])
 
 [connection signal="body_entered" from="Balloon" to="." method="_on_balloon_body_entered"]
