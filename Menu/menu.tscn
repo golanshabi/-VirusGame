@@ -94,6 +94,12 @@ step = 0.001
 script = ExtResource("3_raj00")
 bus_name = "Effects"
 
+[node name="ResetButton" type="Button" parent="VBoxContainer"]
+z_index = 10
+layout_mode = 2
+text = "Reset
+"
+
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 z_index = 10
 layout_mode = 2
@@ -103,4 +109,5 @@ text = "Quit
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_start_button_pressed"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckBox" to="VBoxContainer/HBoxContainer/CheckBox" method="_on_toggled"]
+[connection signal="pressed" from="VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
